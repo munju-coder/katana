@@ -3,9 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KATANA GOLF</title>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../katana/js/jquery.easing.1.3.js"></script>
+    <!--goolge webfont-->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+     <!--font Awesome-->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--css-->
+    <link rel="stylesheet" href="../katana/css/import.css">
+    <link rel="stylesheet" href="../katana/css/main.css">
+    <link rel="stylesheet" href="../katana/css/responsive.css">
 </head>
+
+<script>
+    $(document).ready( function(){
+        $('#w_search_icon').click( function(){
+            $('#M_search_box').slideToggle();
+        });
+        $('.Msb_top_close').click( function(){
+            $('#M_search_box').slideToggle();
+        });
+
+        $('#M_menu_icon').click( function(){
+            $('aside').show();
+            $('.menu_bg').css('display','block');
+        });
+    });
+</script>
 <body>
-    <p>카타나</p>
+    <!--wrap {-->
+    <div class="wrap">
+        <!--menu click bg call-->
+        <div class="menu_bg"></div>
+        <!--header {-->
+        <header>
+            <div class="header_wrap dw_1200px">
+                <div class="header_left"><a href="index.html"><img src="../katana/images/katana_logo.png" alt="main logo image"></a></div>
+                <nav class="header_middle">
+                    <ul class="over_hidden">
+                        <li>
+                            <a href="#">드라이버</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">페이웨이우드</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">유틸리티/웨지</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">아이언</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">피터</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">볼</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">악세서리</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header_right over_hidden">
+                   <!-- <a href="#"><img id="M_search_icon" src="../katana/images/M_search_icon.png" alt="Mobile search icon"></a> -->
+                   <a href="#"><img id="w_search_icon" src="../katana/images/search_icon.png" alt="web search icon"></a>
+                   <a href="#"><img id="M_member_icon" src="../katana/images/M_member_icon.png" alt="Mobile member icon"></a>
+                   <a class="web_txt" href="#">로그인</a>
+                   <a class="web_txt" href="#">회원가입</a>
+                   <a href="#"><img id="M_cart_icon" src="../katana/images/M_cart_icon.png" alt="Mobile cart icon"></a>
+                   <a class="web_txt" href="#">장바구니</a>
+                   <a href="#"><img id= "M_menu_icon" src="../katana/images/M_menu_icon.png" alt="Mobile menu icon"></a>
+                </div>
+
+                <style>
+                    
+                    input,button { outline: none; }
+                    #M_search_box div:not(.search_box) { text-align: right; margin-right: 25%; padding-top: 10px; }
+                    #M_search_box div img { width: 22px; }  
+                    #M_search_box .Msb_middle { text-align: center; margin-top: 10px; border-top: 1px solid #ddd; /* padding-top: 10px; */ }
+                    #M_search_box .Msb_middle input { float: left; width: 50%; border: none; padding: 3px; padding-left: 10px; }
+                    #M_search_box .Msb_middle button { float: right; background-color: #ffffff; border: none; }
+                    #M_search_box .Msb_middle .search_box { width: 100%; max-width: 45%; margin: 25px auto; border: 2px solid #333; padding: 5px; }
+                    #M_search_box .Msb_middle .search_box::after { content: ''; display: block; overflow: hidden; clear: both;}
+                </style>
+            </div>
+
+            <div id="M_search_box">
+                <div>
+                    <a class="Msb_top_close" href="#"><img src="../katana/images/close_btn.png" alt="close_btn"></a>
+                </div>
+
+                <form action="" class="Msb_middle">
+                    <div class="search_box t_center over_hidden">
+                        <input type="text" placeholder="상품검색">
+                        <button><img src="../katana/images/search_icon.png" alt="search_icon"></button>
+                    </div>
+                </form>
+            </div>
+
+            <aside>
+                <nav class="aside_menu">
+
+                    <div>
+                        <a href="#">로그인</a>
+                        <a href="#">회원가입</a>
+
+                        <div><a href="#"><img src="../katana/images/close_btn.png" alt="close_btn"></a></div>
+                    </div>
+
+                    <ul class="over_hidden">
+                        <li>
+                            <a href="#">드라이버</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">페이웨이우드</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">유틸리티/웨지</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">아이언</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">피터</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">볼</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">악세서리</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </header>
+        <!--} header-->
+
+        <!--mainArea {-->
+        <section class="mainArea over_hidden">
+            <a href="#"><img src="../katana/images/main_img.png" alt="main banner image"></a>
+        </section>
+        <!--} mainArea-->
+
+        <!--productArea {-->
+        <section class="productArea over_hidden">
+            <ul>
+                <li><a href="#"><img src="../katana/images/driver_img.png" alt="driver_img"></a></li>
+                <li><a href="#"><img src="../katana/images/fairway_img.png" alt="fairway_img"></a></li>
+                <li><a href="#"><img src="../katana/images/iron_img.png" alt="iron_img"></a></li>
+            </ul>
+        </section>
+        <!--} productArea-->
+
+        <!--introArea {-->
+        <section class="introArea over_hidden">
+            <div class="col-sm-6">
+                <img class="w100" src="../katana/images/katana_self.png" alt="katana golf">
+                <a href="#"><img class="more_btn_left" src="../katana/images/more_btn.png" alt="more_btn"></a>
+            </div>
+            
+            <div class="col-sm-6">
+                <img class="w100" src="../katana/images/katana_resort.png" alt="katana resort">
+                <a href="#"><img class="more_btn_right" src="../katana/images/more_btn.png" alt="more_btn"></a>
+            </div>
+        </section>
+        <!--} introArea-->
+
+        <!--bestArea {-->
+        <section class="bestArea">
+            <div class="dw_1200px">
+                <p class="t_center f22 fw_bold">KYJ GOLFWEAR BEST SELLER</p>
+                <div class="best_img">
+                    <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img1.png" alt="bestSeller_img1"></a></div>
+                    <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img2.png" alt="bestSeller_img2"></a></div>
+                    <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img3.png" alt="bestSeller_img3"></a></div>
+                    <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img4.png" alt="bestSeller_img4"></a></div>
+                </div>
+            </div>
+
+            <div class="dw_1200px t_center view_more_btn"><a href="#"><img src="../katana/images/view_more_btn.png" alt="view_more_btn"></a></div>
+        </section>
+        <!--} bestArea-->
+
+        <!--footer {-->
+        <footer class="katana_bg_color">
+            <!--ft_top {-->
+            <div class="ft_top">
+                <div class="dw_1200px over_hidden ft_top_wrap">
+                    <ul class="over_hidden t_center">
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../katana/images/customer_icon.png" alt="customer_icon">
+                                <span class="fw_bold">고객센터</span>
+                            </a>
+                        </li>
+                        
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../katana/images/way_icon.png" alt="way_icon">
+                                <span class="fw_bold">오시는 길</span>
+                            </a>
+                        </li>
+                        
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../katana/images/as_icon.png" alt="as_icon">
+                                <span class="fw_bold">A/S 센터</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--} ft_top-->
+            
+            <!--ft_middle {-->
+            <div class="ft_middle dw_1200px">
+                <ul class="ftm_top mb10px">
+                    <li><strong class="fw_bold">(주)카타나골프</strong>서울특별시 중구 소공로35 롯데캐슬 아이리스 3층 315호</li>
+                    <li>대표: 김홍득 Tel: 02-501-6955-8255</li>
+                    <li>Fax: 02-538-0116</li>
+                    <li>A/S센터: 02-737-4444</li>
+                </ul>
+
+                <p>본 사이트의 상품이미지 저작권은 카타나골프에 있으며, 내용의 무단복제를 금합니다.</p>
+                
+                <p class="ftm_middle"><strong>KATANA GOLF Co.LTD</strong>All Rights Reserved</p>
+
+                <ul class="ftm_bottom">
+                    <li><a href="#">통합회원</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보 처리방침</a></li>
+                    <li><a href="#">사업자 정보 확인</a></li>
+                    <li><a href="#">공지사항 FAQ</a></li>
+                </ul>
+            </div>
+            <!--} ft_middle-->
+        </footer>
+        <!--} footer-->
+    </div>
+    <!--} wrap-->
 </body>
 </html>

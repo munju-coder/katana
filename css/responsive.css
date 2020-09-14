@@ -1,0 +1,23 @@
+@media(max-width:1200px) {
+    .dw_1200px { width: 90%; }
+    .web_txt { display: none; }
+    #M_member_icon, #M_menu_icon, #M_cart_icon { display: inline-block; width: 23px; }
+    header .header_wrap nav.header_middle { display: none; }
+    header .header_wrap .header_left, header .header_wrap .header_right { width: 50%; }
+    header .header_wrap .header_right a { margin-right: 22px; }
+    aside { position: fixed; top: 0; right: 0; width: 70%; height: 100%; background-color: white;  z-index: 11; }
+    aside ul li { margin-bottom: 10px; }
+}
+@media(max-width:768px) {
+    .wrap .productArea ul li { width: 100%; }
+    .wrap .bestArea .best_img div { margin-bottom: 30px; }
+    /* .wrap footer .ft_top ul li:not(:last-child) { border-right: none; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #ffffff; }
+    .ft_top_wrap { width: 100%; } */
+    footer .ft_top_wrap ul li a img { width: 34px; }
+}
+@media(max-width:500px) {
+    footer .ft_top_wrap ul li a { font-size: 12px; }
+    footer .ft_top_wrap ul li a img { float: left; width: 80%; margin-right: 0; margin-left: 10%; }
+    footer .ft_top_wrap ul li a span { float: left; width: 100%; margin-top: 15px; } 
+    .wrap footer .ft_top ul li:not(:last-child) { border-right: none; }
+} 
