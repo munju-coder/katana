@@ -2,22 +2,65 @@
     .dw_1200px { width: 90%; }
     .web_txt { display: none; }
     #M_member_icon, #M_menu_icon, #M_cart_icon { display: inline-block; width: 23px; }
-    header .header_wrap nav.header_middle { display: none; }
-    header .header_wrap .header_left, header .header_wrap .header_right { width: 50%; }
-    header .header_wrap .header_right a { margin-right: 22px; }
-    aside { position: fixed; top: 0; right: 0; width: 70%; height: 100%; background-color: white;  z-index: 11; }
-    aside ul li { margin-bottom: 10px; }
+    .wrap header .header_wrap .header_right { padding-top: 15px; }
+    .wrap header .header_wrap .header_right a:last-child { margin-right: 0; }
+    .wrap header .header_wrap .header_middle {
+        float: none;
+        transition: right .7s ease-in-out;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: #eee;
+        width: calc(100% - 100px);
+        height: 100vh;
+        z-index: 11;
+        padding-top: 0;
+        padding-bottom: 75px;
+    }
+    .wrap header .header_wrap .header_middle ul li { float: none; margin-right: 0; margin-bottom: 20px; border-bottom: 1px solid #ddd; }
+    .wrap header .header_wrap .header_middle ul .M_login_btn { display: block; font-weight: 600;  }
+    .wrap header .header_wrap .header_middle .M_close_btn { display: block; width: 32px; margin-top: 10px; margin-left: -42px; }
+    .wrap header .header_wrap .header_middle ul li a { width: 100%; text-align: left; padding: 0 20px; min-height: 50px; display: block; -webkit-font-smoothing: antialiased; text-transform: uppercase; color: #333; font-size: 17px; letter-spacing: 1px; }
+    .wrap header .header_wrap .header_left, header .header_wrap .header_right { width: 50%; }
+    .wrap header .header_wrap .header_right a { margin-right: 22px; }
+    .wrap header #M_search_box div:not(.search_box) { margin-right: 5%; }
+    .wrap header #M_search_box .Msb_middle .search_box { max-width: 80%; }
+    .wrap .introArea .more_btn a { padding: 0 0 0 10px; font-size: 12px; }
+    .wrap .introArea .more_btn a img { width: 25px; }
+
 }
 @media(max-width:768px) {
+    .wrap .introArea .golf_box p:first-child, .wrap .introArea .resort_box p:first-child { font-size: 2vw; }
+    .wrap .introArea .title_p { font-size: 3.4vw; }
+    
     .wrap .productArea ul li { width: 100%; }
-    .wrap .bestArea .best_img div { margin-bottom: 30px; }
-    /* .wrap footer .ft_top ul li:not(:last-child) { border-right: none; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #ffffff; }
-    .ft_top_wrap { width: 100%; } */
-    footer .ft_top_wrap ul li a img { width: 34px; }
+    
+    .wrap .bestArea > div { width: 100%; }
+    .wrap .bestArea .best_img div { padding-left: 0; padding-right: 0; margin-bottom: 10px; text-align: center; }
+    /* .wrap .bestArea .best_img div a img { width: 100%; } */
+    .wrap .bestArea .view_more_btn a { padding: 0 0 0 15px; font-size: 12px; }
+
+    .wrap footer .ft_top_wrap ul li a img { width: 34px; }
+    .wrap footer .ft_middle { font-size: 12px; }
+    .wrap footer .ft_middle .ftm_top li { float: none; margin-right: 0; margin-bottom: 5px; }
+    .wrap footer .ft_middle ul.ftm_bottom li { padding-right: 10px; margin-right: 10px; font-size: 11px; }
 }
 @media(max-width:500px) {
-    footer .ft_top_wrap ul li a { font-size: 12px; }
-    footer .ft_top_wrap ul li a img { float: left; width: 80%; margin-right: 0; margin-left: 10%; }
-    footer .ft_top_wrap ul li a span { float: left; width: 100%; margin-top: 15px; } 
+    
+    .wrap header .header_wrap .header_left { width: 40%; }
+    .wrap header .header_wrap .header_left img { width: 70%; }
+    .wrap header .header_wrap .header_right { width: 60%; padding-top: 3px; }
+    .wrap header .header_wrap .header_right a { margin-right: 15px; }
+    .wrap header #M_search_box .Msb_middle input { width: 80%; }
+    .wrap .introArea .more_btn a img { width: 22px; }
+    .wrap .introArea .golf_box { right: 5%; }
+    .wrap .introArea .resort_box { left: 5%; }
+
+    .wrap .bestArea .view_more_btn { margin-top: 20px; margin-bottom: 40px; }
+    
+    .wrap footer .ft_top_wrap ul li a { font-size: 12px; }
+    .wrap footer .ft_top_wrap ul li a img { float: left; width: 80%; margin-right: 0; margin-left: 10%; }
+    .wrap footer .ft_top_wrap ul li a span { float: left; width: 100%; margin-top: 15px; } 
+    .wrap footer .ft_middle ul.ftm_bottom li { width: 33.3%; margin-right: 0; margin-bottom: 10px; padding-right: 0; border-right: none; }
     .wrap footer .ft_top ul li:not(:last-child) { border-right: none; }
 } 

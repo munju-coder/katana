@@ -7,10 +7,11 @@
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../katana/js/jquery.easing.1.3.js"></script>
+    <script src="../katana/js/jquery.transit.min.js"></script>
     <!--goolge webfont-->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-     <!--font Awesome-->
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!--css-->
     <link rel="stylesheet" href="../katana/css/import.css">
     <link rel="stylesheet" href="../katana/css/main.css">
@@ -19,6 +20,7 @@
 
 <script>
     $(document).ready( function(){
+        //검색아이콘 눌렀을때 
         $('#w_search_icon').click( function(){
             $('#M_search_box').slideToggle();
         });
@@ -26,9 +28,14 @@
             $('#M_search_box').slideToggle();
         });
 
+        //모바일일때 메뉴아이콘 클릭시
         $('#M_menu_icon').click( function(){
-            $('aside').show();
-            $('.menu_bg').css('display','block');
+            $('.header_middle').css('right','0');
+            $('.menu_bg').toggle();
+        });
+        $('.menu_bg,.M_close_btn').click( function(){
+            $('.header_middle').css('right','-100%');
+            $('.menu_bg').toggle();
         });
     });
 </script>
@@ -41,8 +48,14 @@
         <header>
             <div class="header_wrap dw_1200px">
                 <div class="header_left"><a href="index.html"><img src="../katana/images/katana_logo.png" alt="main logo image"></a></div>
+                
                 <nav class="header_middle">
+                    <a href="javascript:;"><img class="M_close_btn" src="../katana/images/M_close_btn.png" alt="Mobile close btn"></a>
                     <ul class="over_hidden">
+                        <li class="M_login_btn">
+                            <a href="#">로그인/회원가입</a>
+                        </li>
+
                         <li>
                             <a href="#">드라이버</a>
                         </li>
@@ -83,18 +96,6 @@
                    <a class="web_txt" href="#">장바구니</a>
                    <a href="#"><img id= "M_menu_icon" src="../katana/images/M_menu_icon.png" alt="Mobile menu icon"></a>
                 </div>
-
-                <style>
-                    
-                    input,button { outline: none; }
-                    #M_search_box div:not(.search_box) { text-align: right; margin-right: 25%; padding-top: 10px; }
-                    #M_search_box div img { width: 22px; }  
-                    #M_search_box .Msb_middle { text-align: center; margin-top: 10px; border-top: 1px solid #ddd; /* padding-top: 10px; */ }
-                    #M_search_box .Msb_middle input { float: left; width: 50%; border: none; padding: 3px; padding-left: 10px; }
-                    #M_search_box .Msb_middle button { float: right; background-color: #ffffff; border: none; }
-                    #M_search_box .Msb_middle .search_box { width: 100%; max-width: 45%; margin: 25px auto; border: 2px solid #333; padding: 5px; }
-                    #M_search_box .Msb_middle .search_box::after { content: ''; display: block; overflow: hidden; clear: both;}
-                </style>
             </div>
 
             <div id="M_search_box">
@@ -110,7 +111,7 @@
                 </form>
             </div>
 
-            <aside>
+            <!-- <aside>
                 <nav class="aside_menu">
 
                     <div>
@@ -150,7 +151,7 @@
                         </li>
                     </ul>
                 </nav>
-            </aside>
+            </aside> -->
         </header>
         <!--} header-->
 
@@ -174,12 +175,28 @@
         <section class="introArea over_hidden">
             <div class="col-sm-6">
                 <img class="w100" src="../katana/images/katana_self.png" alt="katana golf">
-                <a href="#"><img class="more_btn_left" src="../katana/images/more_btn.png" alt="more_btn"></a>
+
+                <div class="golf_box">
+                    <p>압도적인 비거리, 초 고반발 골프클럽</p>
+                    <p class="title_p fw_bold">카타나 골프 소개</p>
+
+                    <div class="more_btn t_center over_hidden">
+                        <a href="#">MORE <img src="../katana/images/right_arrow.png" alt="right_arrow"></a>
+                    </div>
+                </div>
             </div>
             
             <div class="col-sm-6">
                 <img class="w100" src="../katana/images/katana_resort.png" alt="katana resort">
-                <a href="#"><img class="more_btn_right" src="../katana/images/more_btn.png" alt="more_btn"></a>
+
+                <div class="resort_box">
+                    <p>새롭게 떠오르는 클락</p>
+                    <p class="title_p fw_bold">클락 최고의 회원제 골프리조트</p>
+
+                    <div class="more_btn t_center over_hidden">
+                        <a href="#">MORE <img src="../katana/images/right_arrow.png" alt="right_arrow"></a>
+                    </div>
+                </div>
             </div>
         </section>
         <!--} introArea-->
@@ -188,7 +205,7 @@
         <section class="bestArea">
             <div class="dw_1200px">
                 <p class="t_center f22 fw_bold">KYJ GOLFWEAR BEST SELLER</p>
-                <div class="best_img">
+                <div class="best_img over_hidden">
                     <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img1.png" alt="bestSeller_img1"></a></div>
                     <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img2.png" alt="bestSeller_img2"></a></div>
                     <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img3.png" alt="bestSeller_img3"></a></div>
@@ -196,7 +213,9 @@
                 </div>
             </div>
 
-            <div class="dw_1200px t_center view_more_btn"><a href="#"><img src="../katana/images/view_more_btn.png" alt="view_more_btn"></a></div>
+            <div class="dw_1200px view_more_btn t_center over_hidden">
+                <a href="#">VIEW MORE <img src="../katana/images/right_arrow.png" alt="right_arrow"></a>
+            </div>
         </section>
         <!--} bestArea-->
 
@@ -242,7 +261,7 @@
 
                 <p>본 사이트의 상품이미지 저작권은 카타나골프에 있으며, 내용의 무단복제를 금합니다.</p>
                 
-                <p class="ftm_middle"><strong>KATANA GOLF Co.LTD</strong>All Rights Reserved</p>
+                <p class="ftm_middle"><strong>KATANA GOLF Co.,LTD</strong> &nbsp;&nbsp;All Rights Reserved.</p>
 
                 <ul class="ftm_bottom">
                     <li><a href="#">통합회원</a></li>

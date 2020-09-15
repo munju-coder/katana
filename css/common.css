@@ -1,11 +1,18 @@
 .dw_1200px { width: 100%; max-width: 1200px; margin: 0 auto; }
 .text_hidden { display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
 .word_break { word-break: keep-all; }
+.over_hidden { overflow: hidden; }
+ul { margin: 0; padding: 0; }
+input,button { outline: none; }
+
+/*width*/
+.w100 { width: 100%; }
 
 /*text-align*/
 .t_center { text-align: center; }
 .t_right { text-align: right; }
 .t_left { text-align: left; }
+
 /*color*/
 .katana_f_color { color: #858585; }
 .katana_bg_color { background-color: #323232; }
@@ -13,10 +20,14 @@
 
 /*font*/
 .fw_bold { font-weight: 600; }
+.f17 { font-size: 17px; }
+.f23 { font-size: 23px; }
+.f22 { font-size: 22px; }
 
 /*margin*/
 .mt10px { margin-top: 10px; }
 .mb10px { margin-bottom: 10px; }
+.mr10px { margin-right: 10px; }
 
 /*padding*/
 .pt10px { padding-top: 10px; }

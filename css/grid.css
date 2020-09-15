@@ -1287,9 +1287,6 @@ html {
   .h6 {
     font-size: 12px;
   }
-  p {
-    margin: 0 0 10px;
-  }
   .lead {
     margin-bottom: 20px;
     font-size: 16px;
@@ -1416,7 +1413,7 @@ html {
   ul,
   ol {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
   ul ul,
   ol ul,
