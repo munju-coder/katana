@@ -1,5 +1,5 @@
 @media(max-width:1200px) {
-    .dw_1200px { width: 90%; }
+    .dw_1400px { width: 90%; }
     .web_txt { display: none; }
     #M_member_icon, #M_menu_icon, #M_cart_icon { display: inline-block; width: 23px; }
     .wrap header .header_wrap .header_right { padding-top: 15px; }
@@ -59,8 +59,8 @@
     .wrap .bestArea .view_more_btn { margin-top: 20px; margin-bottom: 40px; }
     
     .wrap footer .ft_top_wrap ul li a { font-size: 12px; }
-    .wrap footer .ft_top_wrap ul li a img { float: left; width: 80%; margin-right: 0; margin-left: 10%; }
+    .wrap footer .ft_top_wrap ul li a img { float: left; width: 60%; margin-right: 0; margin-left: 20%; }
     .wrap footer .ft_top_wrap ul li a span { float: left; width: 100%; margin-top: 15px; } 
     .wrap footer .ft_middle ul.ftm_bottom li { width: 33.3%; margin-right: 0; margin-bottom: 10px; padding-right: 0; border-right: none; }
-    .wrap footer .ft_top ul li:not(:last-child) { border-right: none; }
+    /* .wrap footer .ft_top ul li:not(:last-child) { border-right: none; } */
 } 

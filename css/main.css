@@ -18,7 +18,7 @@ header .header_wrap .header_middle .M_login_btn,.M_close_btn { display: none; }
 header .header_wrap .header_middle ul::after { content: ''; display: block; }
 header .header_wrap .header_right { width: 24%; text-align: right; padding-top: 24px; }
 header .header_wrap .header_right a { margin-right: 10px; }
-
+header .header_wrap .header_right a #w_search_icon { width: 23px; }
 .wrap header #M_search_box { display: none; }
 .wrap header #M_search_box div:not(.search_box) { text-align: right; margin-right: 19%; /* padding-top: 10px; */ }
 .wrap header #M_search_box div img { width: 22px; }  
