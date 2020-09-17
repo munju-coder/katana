@@ -4,10 +4,14 @@
 .over_hidden { overflow: hidden; }
 ul { margin: 0; padding: 0; }
 input,button { outline: none; }
+.bor_bottom { border-bottom: 1px solid #333; }
+.cursor_p { cursor: pointer; }
 
 /*width*/
 .w100 { width: 100%; }
-
+.w20 { width: 20%; }
+.w30 { width: 30%; }
+.w50 { width: 50%; }
 /*text-align*/
 .t_center { text-align: center; }
 .t_right { text-align: right; }
@@ -17,7 +21,7 @@ input,button { outline: none; }
 .katana_f_color { color: #858585; }
 .katana_bg_color { background-color: #323232; }
 .white_color { color: #ffffff; }
-
+.f_color_81 { color: #818181; }
 /*font*/
 .fw_bold { font-weight: 600; }
 .f17 { font-size: 17px; }
