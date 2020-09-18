@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATANA GOLF</title>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/jquery.transit.min.js"></script>
+    <!--goolge webfont-->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--css-->
+    <link rel="stylesheet" href="../css/import.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<script>
+    $(document).ready( function(){
+        //검색아이콘 눌렀을때 
+        $('#w_search_icon').click( function(){
+            $('#M_search_box').slideToggle();
+        });
+        $('.Msb_top_close').click( function(){
+            $('#M_search_box').slideToggle();
+        });
+
+        //모바일일때 메뉴아이콘 클릭시
+        $('#M_menu_icon').click( function(){
+            $('.header_middle').css('right','0');
+            $('.menu_bg').toggle();
+        });
+        $('.menu_bg,.M_close_btn').click( function(){
+            $('.header_middle').css('right','-100%');
+            $('.menu_bg').toggle();
+        });
+    });
+</script>
+<body>
+    <!--wrap {-->
+    <div class="wrap">
+        <!--menu click bg call-->
+        <div class="menu_bg"></div>
+        <!--header {-->
+        <header class="bor_bottom">
+            <div class="header_wrap dw_1400px">
+                <div class="header_left"><a href="../index.html"><img src="../images/katana_logo.png" alt="main logo image"></a></div>
+                
+                <nav class="header_middle">
+                    <a href="javascript:;"><img class="M_close_btn" src="../images/M_close_btn.png" alt="Mobile close btn"></a>
+                    <ul class="over_hidden">
+                        <li class="M_login_btn">
+                            <a href="#">로그인/회원가입</a>
+                        </li>
+
+                        <li>
+                            <a href="../product/product_list.html">드라이버</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">페이웨이우드</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">유틸리티/웨지</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">아이언</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">피터</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">볼</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">벡</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header_right over_hidden">
+                   <a href="#"><img id="w_search_icon" src="../images/M_search_icon.png" alt="search icon"></a>
+                   <a href="#"><img id="M_member_icon" src="../images/M_member_icon.png" alt="Mobile member icon"></a>
+                   <a class="web_txt" href="#">로그인</a>
+                   <!--로그인 후에는  회원가입 삭제 -> #M_member_icon 넣어주세요 -->
+                   <!-- <a class="web_txt" href="#">로그아웃</a> -->
+                   <a class="web_txt" href="#">회원가입</a>
+                   <a href="#"><img id="M_cart_icon" src="../images/M_cart_icon.png" alt="Mobile cart icon"></a>
+                   <a class="web_txt" href="#">장바구니</a>
+                   <a href="#"><img id= "M_menu_icon" src="../images/M_menu_icon.png" alt="Mobile menu icon"></a>
+                </div>
+            </div>
+
+            <div id="M_search_box">
+                <div>
+                    <a class="Msb_top_close" href="#"><img src="../images/close_btn.png" alt="close_btn"></a>
+                </div>
+
+                <form action="" class="Msb_middle">
+                    <div class="search_box t_center over_hidden">
+                        <input type="text" placeholder="상품검색">
+                        <button><img src="../images/search_icon.png" alt="search_icon"></button>
+                    </div>
+                </form>
+            </div>
+        </header>
+        <!--} header-->
+
+        
+        <section class="contents">
+            <div class="over_hidden">
+                <div class="info_tab over_hidden dw_1400px">
+                    <button class="tablinks f20 border_active" tab_name="tab1">회사소개</button>
+                    <button class="tablinks f20" tab_name="tab2">브랜드소개</button>
+                    <button class="tablinks f20" tab_name="tab3">AS안내</button>
+                </div>
+
+                <script>
+                    $(document).ready( function(){
+
+                        $('.tablinks').each( function(){
+                            $(this).click( function(){
+                                
+                                $(".tablinks").removeClass("border_active");
+                                $(this).addClass("border_active");
+
+                                $(".tabcontent").removeClass("tab_active");
+                                $(".tabcontent").css("display", "none");
+
+                                var chk = $(this).attr("tab_name");
+                                $('#' + chk).css("display", "block");
+
+                            });
+                            
+                        });
+                    });
+                </script>
+                
+
+                <div class="tabcontent tab_active over_hidden" id="tab1">
+                    <div class="companyArea">
+                        <div class="cA_left">
+                            <img class="w100" src="../images/company_image.png" alt="company golf image">
+                        </div>
+
+
+                        <style>
+                            /*companyArea*/
+                            .wrap .contents .companyArea { background-color: #d9d9d9; }
+                            .wrap .contents .companyArea .cA_left { float: left; width: 45%; }
+                            .wrap .contents .companyArea section { float: right; width: 50%; padding-top: 190px; }
+                            .wrap .contents .companyArea section div { margin-bottom: 90px; }
+                            .wrap .contents .companyArea::after { content: ''; display: block; overflow: hidden; clear: both; }
+                            .wrap .contents .companyArea section div h1 { font-size: 3.7vw; }
+                            .wrap .contents .companyArea section .cA_Ptag_top h1:last-of-type { margin-bottom: 32px; }
+
+                            @media(max-width:1400px) {
+                                /*companyArea*/
+                                .wrap .contents .companyArea .cA_left { width: 30%; }
+                                .wrap .contents .companyArea section { width: 65%; padding-top: 10%; }
+                                
+
+                            }
+                            @media(max-width:768px){
+                                /*companyArea*/
+                                .wrap .contents .companyArea section { float: none; width: 80%; max-width: 1400px; margin: 0 auto; padding-top: 0; }
+                                .wrap .contents .companyArea section div h1 { font-size: 24px; }
+                                .wrap .contents .companyArea h3 { font-size: 22px; }
+                                .wrap .contents .companyArea .cA_left { float: none; width: inherit; padding-top: 0; }
+                                .wrap .contents .companyArea .cA_left img { width: 75%; }
+
+
+                            }
+                            @media(max-width:500px){
+                                .wrap .contents .companyArea section div { margin-bottom: 50px; }
+                                .wrap .contents .companyArea h3 { font-size: 18px; }
+                            }
+                        </style>
+                        <section>
+                            <div class="cA_Ptag_top">
+                                <h1 class="fw_bold">회사소개</h1>
+                                <h1>since 1999 KATANA</h1>
+                                <p>카타나골프는 1999년 KATANA 320 장타용 드라이버를 시작으로, 신소재</p>
+                                <p>[애즈롤 티탄] 헤드에 기존의 상식을 뒤엎는 48인치의 긴 샤프트를 장착하여</p>
+                                <p>압도적인 비거리의 [SWORD]드라이버를 탄생시켰습니다.</p>
+                                <p>또한 [SWORD]드라이버는 출시와 함께 10만명의 카타나팬을 확보하는 공전의</p>
+                                <p>히트를 기록하며 그 이후 오랜 시간 동안 고반발계 클럽의 흐름을</p>
+                                <p>주도 하기도 하였습니다.</p>
+                            </div>
+    
+                            <div class="cA_Ptag_middle">
+                                <h3 class="fw_bold">그리고 2006년 가을</h3>
+                                <p>새로운 반발 계수 제한 규정 시행을 앞둔 시점에서 카타나의 마지막이자</p>
+                                <p>최강의 초고반발 드라이버 [SWORD iZU MAX COR]을 출시하였습니다.</p>
+                                <p>KATANA 고반발 기술의 집대성으로 한정 생산된 2,000자루는</p>
+                                <p>불과 1년 뒤에는 반발계수 제한 규정에 묶여</p>
+                                <p>부적합 클럽이 되는 운명임에도 불구하고 최초의 SWORD와 같이</p>
+                                <p>많은 골프팬들로부터 열광적인 환영을 받았습니다.</p>
+                            </div>
+    
+                            <div class="cA_Ptag_bottom">
+                                <h3 class="fw_bold">비거리를 즐기는 골프</h3>
+                                <p>2020년 카타나골프는 창업이래 이러한 카타나의 주장은</p>
+                                <p>포기된 적이 없었으며, 앞으로도 바뀌지 않습니다. </p>
+                                <p>흔들리지 않는 초심으로 비거리를 즐길 수 있는 </p>
+                                <p>클럽개발을 독자적인 기술을 통해 계속 추구할 것입니다.</p>
+                                <p>올해도 필드에서 마음껏 비거리를 즐기시기 바랍니다.</p>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="cA_left"><img class="w100" src="../images/company_bottom_image.png" alt="company golf image"></div>
+
+                </div>
+
+                <style>
+                    /*brandArea*/
+                    .wrap .contents .info_tab { margin-top: 70px; }
+                    .wrap .contents .brandArea .bA_top { position: relative; }
+                    .m_brand_top { display: none; }
+
+                    .wrap .contents .brandArea .bA_top div { position: absolute; top: 9vw; left: 11vw;/* top: 186px; left: 260px; */ color: white; } 
+                    .wrap .contents .brandArea .bA_top div h2 { font-size: 3.7vw; /* margin-bottom: 45px; */ margin-bottom: 3vw; }
+                    .wrap .contents .brandArea .bA_top div h3 { font-size: 3.2vw;/* font-size: 60px; */ /* margin-bottom: 50px; */ margin-bottom: 2.6vw; }
+                    .wrap .contents h3 { margin-top: 0; margin-bottom: 20px; }
+                    .f60 { font-size: 60px; }
+                    .f30 { font-size: 30px; }
+                    .f28 { font-size: 28px; }
+                    .bAmtxt_border { border-bottom: 1px solid #3a383a; padding-bottom: 73px; }
+                    .mb20px { margin-bottom: 20px; }
+                    .wrap .contents .bA_middle { margin-top: 7%; }
+                    .wrap .contents .bA_middle .bAm_txt,.wrap .contents .bA_bottom .bAb_txt { margin-bottom: 76px; }
+                    .wrap .contents .bA_middle .bAm_txt .bAm_left { float: left; width: 82%; }
+                    .wrap .contents .bA_middle .bAm_txt .bAm_right { float: right; margin-top: 50px; }
+                    .wrap .contents .bA_middle .bAm_txt::after { content: ''; display: block; overflow: hidden; clear: both; }
+                    .wrap .contents p { font-size: 22px; margin-bottom: 20px; word-break: keep-all; }
+                    .wrap .contents .bA_middle .bAm_txt span { margin-left: 27px; }
+
+                    .wrap .contents .bA_bottom { background-color: #dee1dc; padding-top: 76px; }
+                    .wrap .contents .bA_bottom .bAb_txt:last-child { margin-bottom: 0; }
+                    .wrap .contents .bA_bottom .bAb_txt p:last-child { margin-bottom: 0; }
+
+                    @media(max-width:1200px) {
+                        /*brandArea*/
+                        .wrap .contents .brandArea .bA_top div { top: 7vw; left: 5vw; }
+                        .wrap .contents .bA_middle .bAm_txt .bAm_left { width: 100%; }
+                        .wrap .contents .bA_middle .bAm_txt .bAm_right { width: 100%; text-align: center; }
+                    }
+                    @media(max-width:768px){
+                        /*brandArea*/
+                        .wrap .contents .info_tab { margin-top: 7%; }
+                        .wrap .contents p { font-size: 16px; margin-bottom: 15px; }
+                        .wrap .contents .brandArea h3 span { font-size: 17px; margin-left: 10px; }
+                        .wrap .contents .brandArea h3 { font-size: 32px; }
+                        .wrap .contents .bA_middle .bAm_txt span { font-size: 22px;  }
+                    }
+                    @media(max-width:500px){
+                        /*brandArea*/
+                        .wrap .contents .tablinks { font-size: 17px; padding-bottom: 10px; }
+                        .wrap .contents .brandArea .bA_top div { top: 10%; }
+                        .wrap .contents .brandArea .bA_top div h2 { font-size: 18px; }
+                        .wrap .contents .brandArea .bA_top div p { font-size: 12px; font-weight: 600; }
+                        .wrap .contents .brandArea h3 { font-size: 18px; }
+
+                        .wrap .contents .bA_middle .bAm_txt span { font-size: 16px; font-weight: 600; }
+                        .wrap .contents .bA_middle .bAm_txt,.wrap .contents .bA_bottom .bAb_txt { margin-bottom: 50px; }
+                        .wrap .contents .bA_middle .bAm_txt span { margin-left: 10px; }
+                        .wrap .contents .bA_bottom { padding-top: 50px; }
+
+                        .wrap .contents .companyArea section div h1 { font-size: 20px; }
+                        .wrap .contents .companyArea section .cA_Ptag_top h1:last-of-type { margin-bottom: 20px; }
+
+                    }
+
+
+                </style>
+                
+                <div class="tabcontent over_hidden" id="tab2">
+                    <div class="brandArea">
+                        <section class="bA_top">
+                            <img class="w100 w_brand_top" src="../images/brand_top.png" alt="brand image">
+                            <div>
+                                <h2 class="fw_bold">브랜드 소개</h2>
+                                <h3 class="fw_bold">SWORD Dimple Face!</h3>
+                                <p class="f28">신개념 SWORD Dimple Face가 비거리의 장벽을 넘는다.</p>
+                            </div>
+                        </section>
+                        
+                        <section class="bA_middle dw_1400px">
+                            <div class="bAm_txt">
+                                <div class="bAm_left">
+                                    <h3 class="f60 mb20px">SWORD</h3>
+                                    <p>놀라운 비거리를 자랑하는 새로운 드라이버의 역사, SWORD Dimple Face! 기존 드라이버의 그루브 또는 스코어</p>
+                                    <p>라인(Scorelines, Grooves)으로는 타구시의 사이드 스핀을 줄이는 것이 불가능하므로 초보자 또는 아마추어를</p>
+                                    <p>괴롭히는 슬라이스를 해결하는 것도 불가능하다고 할 수 있습니다. 그러나, SWORD Dimple Face Driver는 페이스</p>
+                                    <p>면에 기존 드라이버의 가로 스코어라인 대신 Five Dimple 센터에 있는 큰 Dimple 1개에 4개의 작은 Dimple)을</p>
+                                    <p>장착하여 타구시 미끄럼을 극한까지 억제 할 수 있게 되어 사이드 스핀을 효과적으로 줄일 수 있게 되었습니다. 따라서</p>
+                                    <p>슬라이스가 직진성능으로 전환되어 비거리를 증대 시키는 효과를 내는 동시에 딤플페이스 고유의 탁월한 스프링 효과는</p>
+                                    <p>거리를 더욱 증폭시킵니다. SWORD Dimple Face만의 호쾌하면서도 폭발적인 타구감! 놀라운 비거리와 방향성을</p>
+                                    <p>자랑하는 초고반발 SWORD Dimple Face Driver가 비거리의 장벽을 뛰어 넘을 것입니다.</p>
+                                </div>
+
+                                <div class="bAm_right"><img class="w40"src="../images/brand_logo_top.png" alt="brand logo image"></div>
+                            </div>
+
+                            <div class="bAm_txt">
+                                 <h3 class="f60">SWORD TECHNOLOGY</h3>
+                                 <p class="fw_bold">Moment of inertia </p>
+                                 <p>개량된 세미-샬로우 페이스 헤드의 편안한 필링, 그리고 트윈 웨이트 장착에  의한 최적의 중량배분으로 더욱 향상된</p>
+                                 <p>관성모멘트를 실현하였습니다. 확장된 유효타구면으로 딥페이스의 비거리와 샬로우 페이스의 방향성을 동시에</p>
+                                 <p>구현함으로써 최대의 직진성능을 발휘합니다.</p>
+                                 <p class="fw_bold">Kick Point Flow Shaft </p>
+                                 <p>킥포인트가 플레이어의 타이밍에 맞추어 흘러내리듯 이동하며 골퍼 개개인의 임팩트 타점에 정확하게 반응합니다.</p>
+                                 <p>극대화된 관성모멘트와 함께 최적의 킥포인트가 임팩트시 최대의 반발 성능을 발휘할 것입니다.</p>
+                            </div>
+
+                            <div class="bAm_txt bAmtxt_border">
+                                <div class="bAm_left">
+                                    <h3 class="f60 fw_bold ">비거리의 또 다른 한계, AXA GOLF</h3>
+                                    <p>AXA GOLF는 남녀를 불문하고, 시니어플레이어도 안심하고 사용할 수 있도록 고탄성 경량타입의 샤프트를 </p>
+                                    <p>개발하였습니다. 기존의 경량샤프트에서 흔히 볼 수 있는 &lt;심한 휘어짐&gt;,  &lt;심한 흔들림&gt;, &lt;약한 타구&gt; 등의 문제를</p>
+                                    <p>개선하여, 가벼우면서도 강력한 탄도를 만들어 낼 수 있는 탄성력을 제공하게 되었습니다. 뿐만 아니라 얇고 깊은 중심을</p>
+                                    <p>가진 초고반발 헤드는 어드레스부터 편안하고 안정된 느낌을 제공할 것입니다. 고탄성 경량 샤프트와 초고반발 비공인 </p>
+                                    <p>헤드의 절묘한 조합은 이제껏 느껴보지 못한 폭발적인 탄도를 구현해 낼 것입니다.</p>
+                                </div>
+
+                                <div class="bAm_right"><img class="w40" src="../images/brand_logo_bottom.png" alt="brand logo image"></div>
+                            </div>
+
+                            <div class="bAm_txt">
+                                <h3 class="f60"><strong>Head</strong><span class="f30">현존하는 대부분의 혁신기술을 모두 탑재한 AXA 드라이버</span></h3>
+                                <p>460cc의 대형헤드에 어울리는 중후한 어드레스의 이미지는 편안하고 안정된 필링으로 혼란스럽지 않은 스윙을 만들어</p>
+                                <p>냅니다. 최적의 발사각으로 이상적인 탄도를 형성하고 공의 초속을 증가시키는 것이 AXA 골프만의 독자적인 TWIN</p>
+                                <p>WEIGHT AXA TECHNOLOGY, AXA GOLF가 탄생시킨 헤드의 비밀입니다. TWIN WEIGHT는 페이스 면이 </p>
+                                <p>흔들리거나 안정된 스윙궤적에서 이탈하는 것을 방지하여 정확한 임팩트를 유도하고, 관성모멘트를 극대화시켜 헤드 </p>
+                                <p>스피드를 증가시킵니다. 따라서 이러한 물리적인 기술과의 상승효과로 만들어진 AXA 드라이버의 타구는 불가능한</p>
+                                <p>비거리를 가능하게 할 것입니다. 강력한 탄도를 만들어내는 AXA 드라이버는, CHEMICAL 티탄, 정밀단조 풀티탄 컵 </p>
+                                <p>페이스로 초고반발의 유효타 구면을 더욱 확대하여 안정된 느낌으로 스윙을 마무리할 수 있습니다.</p>
+                            </div>
+
+                            <div class="bAm_txt">
+                                <h3 class="f60"><strong>Shaft</strong> <span class="f30">더블 빅 Shaft(NSS SHAFT)</span></h3>
+                                <p>샤프트에 있어서는, 손잡이 부분이 무거워서 앞부분이 가볍다는 생각이 들 것입니다. 하지만 이것은 복싱의 카운트</p>
+                                <p>펀치처럼 순간적으로 강력한 힘을 발휘할 수 있도록 물리학의 지렛대의 원리를 이용하여 최적의 상태로 설계되었습니다. </p>
+                                <p>또한 헤드의 토우부분이 타구방향으로 적절한 타이밍에 되돌아오게 하는 중심각을 샤프트의 킥포인트와 일치시켜</p>
+                                <p>최상의 임팩트 포인트를 만들어 냅니다. 따라서 슬라이스 방지는 물론 신속한 샤프트의 복원으로 의외의 빠른 헤드  </p>
+                                <p>스피드를 경험하게 될 것입니다. 카운트와 중심각을 동시에 일치시킨 신개념 샤프트, 바로 더블킥 샤프트입니다.</p>
+                            </div>
+                            
+                        </section>
+
+                        <section class="bA_bottom">
+                            <div class="bAb_txt dw_1400px">
+                                <h3 class="f60"><strong>Feeling</strong> <span class="f30">性能</span></h3>
+                                <p>날씨 좋은 날 코스에 나가서 이것저것 생각지 않고 기분 좋은 어드레스를 한다면!? 나이스 샷을 할 수 있습니다.</p> 
+                                <p>하지만 보통은 발끝이 내리막이라고 느껴지면? 갑자기 우측에 있는 연못이 마음에 걸리면?</p>
+                                <p>좌측에 있는 나무도 눈에 거슬리면?  어드레스 후 역풍을 조금 강하게 느끼면? 등의 생각을 하게 됩니다.</p>
+                                <p> 프로, 초보자에 관계없이 조금의 망설임이 그대로 play에 영향을 주는 것이 골프의 어려움입니다.</p>
+                                <p>골프가 mental sports라는 것을 제품 개발의 기반으로 삼고 있는 KATANA GOLF는 Feeling</p>
+                                <p>성능을 더욱 진화시킨 신브랜드를 제안합니다.</p>
+                            </div>
+
+                            <div class="bAb_txt dw_1400px">
+                               <h3 class="f60">SWORD iZU<span>아이주</span></h3> 
+                               <p>인간오감에 작용하는 다양한 요소를 철저히 연구해서 Player Image를 향상시킬 수 있는 Club을 여기에 실현했습니다.</p>
+                               <p>- Club을 봤을때 인상</p>
+                               <p>- 손 감촉</p>
+                               <p>- 어드레스시의 기분</p>
+                               <p>- 헤드무게</p>
+                               <p>- 샤프트의 유연성</p>
+                               <p>- 스윙시의 안정감</p>
+                               <p>- 헤드가 기분좋게 나아가는 느낌</p>
+                               <p>- 임팩트시 스퀘어로 돌아오는 느낌</p>
+                               <p>- 임팩트의 느낌</p>
+                               <p>- 호쾌한 타구음</p>
+                            </div>
+                           
+                        </section>
+
+                        <div class="bAb_right"><img class="w100" src="../images/brand_bottom.png" alt="brand background image"></div>
+                        
+                    </div>
+                </div>
+        
+                <div class="tabcontent over_hidden" id="tab3">
+                    <div class="asArea">
+                        <section class="asA_top">
+                            <img class="w100" src="../images/as_top.png" alt="brand image">
+                            <div>
+                                <h2 class="fw_bold">AS안내</h2>
+                                <h3 class="fw_bold">AS절차</h3>
+                            </div>
+
+                            <div>
+
+                            </div>
+                        </section>
+                        
+                        <se ction class="asA_middle">
+                            <div class="asAm_txt">
+                                <h3 class="f60 mb20px">접수방법</h3>
+                                <ul>
+                                    <li>• 본사 고객센터 내방 (2~3일 소요)</li>
+                                    <li>• 카타나(스워드) 취급점 위탁 (3~5일) </li>
+                                    <li>• 고객택배 직배송 (3~5일)</li>
+                                </ul>
+                            </div>
+
+                            <div class="asAm_txt">
+                                <h3 class="f60 mb20px">AS센터 안내</h3>
+                                <p>서울특별시 중구 소공로35 롯데캐슬 아이리스 3층 315호 </p>
+                                <ul>
+                                    <li>Tel. 02-501-6955-8255</li>
+                                    <li>Fax. 02-538-0116 AS 센터</li>
+                                    <li>Tel. 02-737-4444</li>
+                                </ul>
+                            </div>
+
+                            <div class="asAm_txt">
+                                <h3 class="f60 mb20px">AS 적용 규정</h3>
+                                <p>무상 AS보증기간 내 품질보증은 정상적인 사용방법인 경우 사용 중 제품에 발생 된 이상현상 및 파손에 대하여</p>
+                                <p>무상으로 수리해 드리는 것을 의미합니다.</p>
+                                <ul>
+                                    <li>Tel. 02-501-6955-8255</li>
+                                    <li>Fax. 02-538-0116 AS 센터</li>
+                                    <li> Tel. 02-737-4444</li>
+                                </ul>
+                            </div>
+
+                            <div class="asAm_txt">
+                                <h3 class="f60"><strong>Head</strong><span class="f30">현존하는 대부분의 혁신기술을 모두 탑재한 AXA 드라이버</span></h3>
+                                <p>460cc의 대형헤드에 어울리는 중후한 어드레스의 이미지는 편안하고 안정된 필링으로 혼란스럽지 않은 스윙을 만들어</p>
+                                <p>냅니다. 최적의 발사각으로 이상적인 탄도를 형성하고 공의 초속을 증가시키는 것이 AXA 골프만의 독자적인 TWIN</p>
+                                <p>WEIGHT AXA TECHNOLOGY, AXA GOLF가 탄생시킨 헤드의 비밀입니다. TWIN WEIGHT는 페이스 면이 </p>
+                                <p>흔들리거나 안정된 스윙궤적에서 이탈하는 것을 방지하여 정확한 임팩트를 유도하고, 관성모멘트를 극대화시켜 헤드 </p>
+                                <p>스피드를 증가시킵니다. 따라서 이러한 물리적인 기술과의 상승효과로 만들어진 AXA 드라이버의 타구는 불가능한</p>
+                                <p>비거리를 가능하게 할 것입니다. 강력한 탄도를 만들어내는 AXA 드라이버는, CHEMICAL 티탄, 정밀단조 풀티탄 컵 </p>
+                                <p>페이스로 초고반발의 유효타 구면을 더욱 확대하여 안정된 느낌으로 스윙을 마무리할 수 있습니다.</p>
+                            </div>
+
+                            <div class="asAm_txt">
+                                <h3 class="f60"><strong>Shaft</strong> <span class="f30">더블 빅 Shaft(NSS SHAFT)</span></h3>
+                                <p>샤프트에 있어서는, 손잡이 부분이 무거워서 앞부분이 가볍다는 생각이 들 것입니다. 하지만 이것은 복싱의 카운트</p>
+                                <p>펀치처럼 순간적으로 강력한 힘을 발휘할 수 있도록 물리학의 지렛대의 원리를 이용하여 최적의 상태로 설계되었습니다. </p>
+                                <p>또한 헤드의 토우부분이 타구방향으로 적절한 타이밍에 되돌아오게 하는 중심각을 샤프트의 킥포인트와 일치시켜</p>
+                                <p>최상의 임팩트 포인트를 만들어 냅니다. 따라서 슬라이스 방지는 물론 신속한 샤프트의 복원으로 의외의 빠른 헤드  </p>
+                                <p>스피드를 경험하게 될 것입니다. 카운트와 중심각을 동시에 일치시킨 신개념 샤프트, 바로 더블킥 샤프트입니다.</p>
+                            </div>
+                            
+                        </se>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--footer {-->
+        <footer class="katana_bg_color">
+            <!--ft_top {-->
+            <div class="ft_top">
+                <div class="dw_1400px over_hidden ft_top_wrap">
+                    <ul class="over_hidden t_center">
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../images/customer_icon.png" alt="customer_icon">
+                                <span class="fw_bold">고객센터</span>
+                            </a>
+                        </li>
+                        
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../images/way_icon.png" alt="way_icon">
+                                <span class="fw_bold">오시는 길</span>
+                            </a>
+                        </li>
+                        
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../images/as_icon.png" alt="as_icon">
+                                <span class="fw_bold">A/S 센터</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--} ft_top-->
+            
+            <!--ft_middle {-->
+            <div class="ft_middle dw_1400px">
+                <ul class="ftm_top mb10px">
+                    <li><strong class="fw_bold">(주)카타나골프</strong>서울특별시 중구 소공로35 롯데캐슬 아이리스 3층 315호</li>
+                    <li>대표: 김홍득 Tel: 02-501-6955-8255</li>
+                    <li>Fax: 02-538-0116</li>
+                    <li>A/S센터: 02-737-4444</li>
+                </ul>
+
+                <p>본 사이트의 상품이미지 저작권은 카타나골프에 있으며, 내용의 무단복제를 금합니다.</p>
+                
+                <p class="ftm_middle"><strong>KATANA GOLF Co.,LTD</strong> &nbsp;&nbsp;All Rights Reserved.</p>
+
+                <ul class="ftm_bottom">
+                    <li><a href="#">통합회원</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보 처리방침</a></li>
+                    <li><a href="#">사업자 정보 확인</a></li>
+                    <li><a href="#">공지사항 FAQ</a></li>
+                </ul>
+            </div>
+            <!--} ft_middle-->
+        </footer>
+        <!--} footer-->
+    </div>
+    <!--} wrap-->
+</body>
+</html>
