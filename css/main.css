@@ -15,7 +15,7 @@ a:hover,a:active,a:visited ,a:link { color: #333; text-decoration: none; }
 .wrap header .header_wrap .header_middle .M_login_btn,.M_close_btn { display: none; }
 
 .wrap header .header_wrap .header_middle ul::after { content: ''; display: block; }
-.wrap header .header_wrap .header_right { width: 24%; text-align: right; padding-top: 24px; }
+.wrap header .header_wrap .header_right {/*  width: 24%; */ text-align: right; padding-top: 24px; }
 .wrap header .header_wrap .header_right a { margin-right: 10px; }
 .wrap header .header_wrap .header_right a #w_search_icon { width: 23px; }
 .wrap header #M_search_box { display: none; }

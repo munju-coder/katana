@@ -37,7 +37,7 @@
     .wrap header .header_wrap .header_middle ul li { float: none; margin-right: 0; margin-bottom: 20px; border-bottom: 1px solid #ddd; }
     .wrap header .header_wrap .header_middle ul .M_login_btn { display: block; font-weight: 600;  }
     .wrap header .header_wrap .header_middle .M_close_btn { display: block; width: 32px; margin-top: 10px; margin-left: -42px; }
-    .wrap header .header_wrap .header_middle ul li a { width: 100%; text-align: left; padding: 0 20px; min-height: 50px; display: block; -webkit-font-smoothing: antialiased; text-transform: uppercase; color: #333; font-size: 17px; letter-spacing: 1px; }
+    .wrap header .header_wrap .header_middle ul li a { width: 100%; text-align: left; padding: 0 20px; min-height: 40px; display: block; -webkit-font-smoothing: antialiased; text-transform: uppercase; color: #333; font-size: 17px; letter-spacing: 1px; }
     .wrap header .header_wrap .header_left, header .header_wrap .header_right { width: 50%; }
     .wrap header .header_wrap .header_right a { margin-right: 22px; }
     .wrap header #M_search_box div:not(.search_box) { margin-right: 5%; }
