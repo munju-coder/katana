@@ -6,17 +6,16 @@
     <title>KATANA GOLF</title>
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="../katana/js/jquery.easing.1.3.js"></script>
-    <script src="../katana/js/jquery.transit.min.js"></script>
-    <script src="../katana/js/COMMON_geo.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/jquery.transit.min.js"></script>
     <!--goolge webfont-->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!--font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!--css-->
-    <link rel="stylesheet" href="../katana/css/import.css">
-    <link rel="stylesheet" href="../katana/css/main.css">
-    <link rel="stylesheet" href="../katana/css/responsive.css">
+    <link rel="stylesheet" href="../css/import.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <script>
@@ -38,8 +37,6 @@
             $('.header_middle').css('right','-100%');
             $('.menu_bg').toggle();
         });
-
-     
     });
 </script>
 <body>
@@ -48,19 +45,19 @@
         <!--menu click bg call-->
         <div class="menu_bg"></div>
         <!--header {-->
-        <header>
+        <header class="bor_bottom">
             <div class="header_wrap dw_1400px">
-                <div class="header_left"><a href="index.html"><img class="web_banner" src="../katana/images/katana_logo.png" alt="main logo image"></a></div>
+                <div class="header_left"><a href="../index.html"><img src="../images/katana_logo.png" alt="main logo image"></a></div>
                 
                 <nav class="header_middle">
-                    <a href="javascript:;"><img class="M_close_btn" src="../katana/images/M_close_btn.png" alt="Mobile close btn"></a>
+                    <a href="javascript:;"><img class="M_close_btn" src="../images/M_close_btn.png" alt="Mobile close btn"></a>
                     <ul class="over_hidden">
                         <li class="M_login_btn">
                             <a href="#">로그인/회원가입</a>
                         </li>
 
                         <li>
-                            <a href="../katana/product/product_list.html">드라이버</a>
+                            <a href="../product/product_list.html">드라이버</a>
                         </li>
     
                         <li>
@@ -84,104 +81,110 @@
                         </li>
                         
                         <li>
-                            <a href="#">백</a>
+                            <a href="#">벡</a>
                         </li>
                     </ul>
                 </nav>
 
                 <div class="header_right over_hidden">
-                   <!-- <a href="#"><img id="M_search_icon" src="../katana/images/M_search_icon.png" alt="Mobile search icon"></a> -->
-                   <a href="#"><img id="w_search_icon" src="../katana/images/M_search_icon.png" alt="search icon"></a>
-                   <a href="#"><img id="M_member_icon" src="../katana/images/M_member_icon.png" alt="Mobile member icon"></a>
+                   <a href="#"><img id="w_search_icon" src="../images/M_search_icon.png" alt="search icon"></a>
+                   <a href="#"><img id="M_member_icon" src="../images/M_member_icon.png" alt="Mobile member icon"></a>
                    <a class="web_txt" href="#">로그인</a>
-                   <!--로그인 후에는  회원가입 없애고 -> #M_member_icon 넣어주세요 -->
+                   <!--로그인 후에는  회원가입 삭제 -> #M_member_icon 넣어주세요 -->
                    <!-- <a class="web_txt" href="#">로그아웃</a> -->
                    <a class="web_txt" href="#">회원가입</a>
-                   <a href="#"><img id="M_cart_icon" src="../katana/images/M_cart_icon.png" alt="Mobile cart icon"></a>
+                   <a href="#"><img id="M_cart_icon" src="../images/M_cart_icon.png" alt="Mobile cart icon"></a>
                    <a class="web_txt" href="#">장바구니</a>
-                   <a href="#"><img id= "M_menu_icon" src="../katana/images/M_menu_icon.png" alt="Mobile menu icon"></a>
+                   <a href="#"><img id= "M_menu_icon" src="../images/M_menu_icon.png" alt="Mobile menu icon"></a>
                 </div>
             </div>
 
             <div id="M_search_box">
                 <div>
-                    <a class="Msb_top_close" href="#"><img src="../katana/images/close_btn.png" alt="close_btn"></a>
+                    <a class="Msb_top_close" href="#"><img src="../images/close_btn.png" alt="close_btn"></a>
                 </div>
 
                 <form action="" class="Msb_middle">
                     <div class="search_box t_center over_hidden">
                         <input type="text" placeholder="상품검색">
-                        <button><img src="../katana/images/search_icon.png" alt="search_icon"></button>
+                        <button><img src="../images/search_icon.png" alt="search_icon"></button>
                     </div>
                 </form>
             </div>
         </header>
         <!--} header-->
-
-        <!--mainArea {-->
-        <section class="mainArea over_hidden">
-            <a href="#"><img id="main_banner" src="../katana/images/web_banner1.png" alt="main banner image"></a>
-            <a href="#"><img id="M_main_banner" src="../katana/images/m_web_banner1.jpg" alt="main banner image"></a>
-        </section>
-        <!--} mainArea-->
-
-        <!--productArea {-->
-        <section class="productArea over_hidden">
-            <ul>
-                <li><a href="../katana/product/product_list.html"><img src="../katana/images/driver_img.png" alt="driver_img"></a></li>
-                <li><a href="#"><img src="../katana/images/fairway_img.png" alt="fairway_img"></a></li>
-                <li><a href="#"><img src="../katana/images/iron_img.png" alt="iron_img"></a></li>
-            </ul>
-        </section>
-        <!--} productArea-->
-
-        <!--introArea {-->
-        <section class="introArea over_hidden">
-            <div class="col-sm-6">
-                <img class="w100" src="../katana/images/katana_self.png" alt="katana golf">
-
-                <div class="golf_box">
-                    <p>압도적인 비거리, 초 고반발 골프클럽</p>
-                    <p class="title_p fw_bold">카타나 골프 소개</p>
-
-                    <div class="more_btn t_center over_hidden">
-                        <a href="../katana/contents/company.html">MORE <img src="../katana/images/right_arrow.png" alt="right_arrow"></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-sm-6">
-                <img class="w100" src="../katana/images/katana_resort.png" alt="katana resort">
-
-                <div class="resort_box">
-                    <p>새롭게 떠오르는 클락</p>
-                    <p class="title_p fw_bold">클락 최고의 회원제 골프리조트</p>
-
-                    <div class="more_btn t_center over_hidden">
-                        <a href="#">MORE <img src="../katana/images/right_arrow.png" alt="right_arrow"></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--} introArea-->
-
-        <!--bestArea {-->
-        <section class="bestArea">
+        
+        <section class="contents">
             <div class="dw_1400px">
-                <p class="t_center f22 fw_bold">KYJ GOLFWEAR BEST SELLER</p>
-                <div class="best_img over_hidden">
-                    <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img1.png" alt="bestSeller_img1"></a></div>
-                    <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img2.png" alt="bestSeller_img2"></a></div>
-                    <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img3.png" alt="bestSeller_img3"></a></div>
-                    <div class="col-xs-12 col-sm-3"><a href="#"><img class="w100" src="../katana/images/bestSeller_img4.png" alt="bestSeller_img4"></a></div>
+                <h2>이메일 문의</h2>
+                <h3>
+                    <p>고객정보</p>
+                    <p>*필수정보</p>
+                </h3>
+
+                <div><input type="text" placeholder="이름"></div>
+                <div><input type="text" placeholder="이메일"></div>
+                <div><input type="text" placeholder="전화번호"></div>
+                <div><input type="text" placeholder="주문번호"></div>
+                <div>
+                    <select name="" id="">
+                        <option value="">결제</option>
+                        <option value="">배송문의</option>
+                        <option value="">교환</option>
+                        <option value="">반품</option>
+                        <option value="">취소문의</option>
+                        <option value="">사이트이용문의</option>
+                        <option value="">기타</option>
+                    </select>
                 </div>
+                <div><textarea name="" id="" cols="30" rows="10" placeholder="상세내용"></textarea></div>
             </div>
 
-            <div class="dw_1400px view_more_btn t_center over_hidden">
-                <a href="#">VIEW MORE <img src="../katana/images/right_arrow.png" alt="right_arrow"></a>
+            <div class="dw_1400px">
+                <h3>&lt;개인정보 수집ㆍ이용 동의&gt;</h3>
+
+                <style type="text/css">
+                    .tg  {border-collapse:collapse;border-spacing:0;}
+                    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+                      overflow:hidden;padding:10px 5px;word-break:normal;}
+                    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+                      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+                    .tg .tg-baqh{text-align:center;vertical-align:top}
+                    .tg .tg-0lax{text-align:center;vertical-align:top}
+                </style>
+
+                <table class="tg" style="undefined;table-layout: fixed; width: 653px">
+                    <thead>
+                    <tr>
+                        <th class="tg-baqh">분류</th>
+                        <th class="tg-baqh">목적</th>
+                        <th class="tg-baqh">항목</th>
+                        <th class="tg-baqh">동의여부</th>
+                        <th class="tg-baqh">보유기간</th>
+                    </tr>
+                    </thead>
+                    
+                    <tbody>
+                    <tr>
+                        <td class="tg-baqh">필수</td>
+                        <td class="tg-baqh">카타나 온라인몰 문의 관련 본인 확인 및 회신</td>
+                        <td class="tg-baqh">이름, 이메일</td>
+                        <td class="tg-0lax"><input type="checkbox"></td>
+                        <td class="tg-baqh">1년</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-baqh">선택</td>
+                        <td class="tg-baqh">문의사항 확인 및 추가 회신 방법</td>
+                        <td class="tg-baqh">전화번호,주문번호</td>
+                        <td class="tg-0lax"><input type="checkbox"></td>
+                        <td class="tg-baqh">1년</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
+
+            <div class="dw_1400px"><input type="submit" value="제출하기"></div>
         </section>
-        <!--} bestArea-->
 
         <!--footer {-->
         <footer class="katana_bg_color">
@@ -190,22 +193,22 @@
                 <div class="dw_1400px over_hidden ft_top_wrap">
                     <ul class="over_hidden t_center">
                         <li class="col-xs-4">
-                            <a href="../katana/contents/cs_center.html">
-                                <img class="mr10px" src="../katana/images/customer_icon.png" alt="customer_icon">
+                            <a href="#">
+                                <img class="mr10px" src="../images/customer_icon.png" alt="customer_icon">
                                 <span class="fw_bold">고객센터</span>
                             </a>
                         </li>
                         
                         <li class="col-xs-4">
                             <a href="#">
-                                <img class="mr10px" src="../katana/images/way_icon.png" alt="way_icon">
+                                <img class="mr10px" src="../images/way_icon.png" alt="way_icon">
                                 <span class="fw_bold">오시는 길</span>
                             </a>
                         </li>
                         
                         <li class="col-xs-4">
                             <a href="#">
-                                <img class="mr10px" src="../katana/images/as_icon.png" alt="as_icon">
+                                <img class="mr10px" src="../images/as_icon.png" alt="as_icon">
                                 <span class="fw_bold">A/S 센터</span>
                             </a>
                         </li>
