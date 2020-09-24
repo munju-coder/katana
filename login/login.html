@@ -114,74 +114,33 @@
         </header>
         <!--} header-->
         
-        <!--inquery_contents {-->
-        <section class="inquery_contents">
-            <!--inquery_form {-->
-            <form action="" class="inquery_form">
-                <div class="ic_top dw_1400px">
-                    <h2>이메일 문의</h2>
-                    <h3>
-                        <p>고객정보</p>
-                        <p>*필수정보</p>
-                    </h3>
+        <!--login_contents {-->
+        <section class="login_contents dw_1400px">
+            <!--login_form-->
+            <form name= "login_form" action="" class="login_form">
+                <div class="login_box dw_1400px t_center">
+                    <h2>로그인</h2>
 
-                    <div><input type="text" placeholder="이름"></div>
-                    <div><input type="text" placeholder="이메일"></div>
-                    <div><input type="text" placeholder="전화번호"></div>
-                    <div><input type="text" placeholder="주문번호"></div>
-                    <div>
-                        <select name="" id="">
-                            <option value="">결제</option>
-                            <option value="">배송문의</option>
-                            <option value="">교환</option>
-                            <option value="">반품</option>
-                            <option value="">취소문의</option>
-                            <option value="">사이트이용문의</option>
-                            <option value="">기타</option>
-                        </select>
+                    <div class="lb_middle">
+                        <div><input class="w100" type="text" class="lbmb_input" name="mb_id" id="mb_id" placeholder="아이디를 입력하세요."></div>
+                        <div><input class="w100" type="password" class="lbmb_input" name="mb_passwd" id="mb_passwd" placeholder="패스워드를 입력하세요."></div>
                     </div>
-                    <div><textarea name="" id="" cols="30" rows="10" placeholder="상세내용"></textarea></div>
+
+                    <div class="logbox_btn f18 fw_bold">
+                        <input class="w100" type="submit" value="로그인">
+                    </div>
+
+                    <div class="lb_bottom t_center">
+                        <div class="lbmb_check"><input type="checkbox" class="id_save">아이디저장</div>
+                        <input type="button" class="idpw_find" value="아이디/비밀번호찾기">
+                        <a href="../member/register_chk.html"><input type="button" value="회원가입"></a>
+                    </div>
                 </div>
 
-                <div class="ic_middle dw_1400px">
-                    <h3>&lt;개인정보 수집ㆍ이용 동의&gt;</h3>
-
-                    <table class="iq_table">
-                        <thead>
-                            <tr>
-                                <th class="t_center">분류</th>
-                                <th class="t_center">목적</th>
-                                <th class="t_center">항목</th>
-                                <th class="t_center">동의여부</th>
-                                <th class="t_center display_none">보유기간</th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody>
-                            <tr>
-                                <td class="t_center">필수</td>
-                                <td class="t_center">카타나 온라인몰 문의 관련 본인 확인 및 회신</td>
-                                <td class="t_center">이름, 이메일</td>
-                                <td class="t_center"><input type="checkbox"></td>
-                                <td class="t_center display_none">1년</td>
-                            </tr>
-                            
-                            <tr>
-                                <td class="t_center">선택</td>
-                                <td class="t_center">문의사항 확인 및 추가 회신 방법</td>
-                                <td class="t_center">전화번호,주문번호</td>
-                                <td class="t_center"><input type="checkbox"></td>
-                                <td class="t_center display_none">1년</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="dw_1400px ic_btn"><input type="submit" value="제출하기"></div>
             </form>
-            <!--} inquery_form-->
+
         </section>
-        <!--} inquery_contents-->
+        <!--} login_contents-->
 
         <!--footer {-->
         <footer class="katana_bg_color">

@@ -21,15 +21,16 @@
 
 <script>
     $(document).ready( function(){
-        //검색아이콘 눌렀을때 
-        $('#w_search_icon').click( function(){
-            $('#M_search_box').slideToggle();
-        });
-        $('.Msb_top_close').click( function(){
+        /**
+        * @brief menu click event
+        */
+        $('#w_search_icon,.Msb_top_close').click( function(){
             $('#M_search_box').slideToggle();
         });
 
-        //모바일일때 메뉴아이콘 클릭시
+        /**
+        * @brief menu click event
+        */
         $('#M_menu_icon').click( function(){
             $('.header_middle').css('right','0');
             $('.menu_bg').toggle();
@@ -56,7 +57,7 @@
                     <a href="javascript:;"><img class="M_close_btn" src="../katana/images/M_close_btn.png" alt="Mobile close btn"></a>
                     <ul class="over_hidden">
                         <li class="M_login_btn">
-                            <a href="#">로그인/회원가입</a>
+                            <a href="../katana/login/login.html">로그인/회원가입</a>
                         </li>
 
                         <li>
@@ -93,7 +94,7 @@
                    <!-- <a href="#"><img id="M_search_icon" src="../katana/images/M_search_icon.png" alt="Mobile search icon"></a> -->
                    <a href="#"><img id="w_search_icon" src="../katana/images/M_search_icon.png" alt="search icon"></a>
                    <a href="#"><img id="M_member_icon" src="../katana/images/M_member_icon.png" alt="Mobile member icon"></a>
-                   <a class="web_txt" href="#">로그인</a>
+                   <a class="web_txt" href="../katana/login/login.html">로그인</a>
                    <!--로그인 후에는  회원가입 없애고 -> #M_member_icon 넣어주세요 -->
                    <!-- <a class="web_txt" href="#">로그아웃</a> -->
                    <a class="web_txt" href="#">회원가입</a>
@@ -105,7 +106,7 @@
 
             <div id="M_search_box">
                 <div>
-                    <a class="Msb_top_close" href="#"><img src="../katana/images/close_btn.png" alt="close_btn"></a>
+                    <img class="Msb_top_close cursor_p" src="../katana/images/close_btn.png" alt="close_btn">
                 </div>
 
                 <form action="" class="Msb_middle">
@@ -204,7 +205,7 @@
                         </li>
                         
                         <li class="col-xs-4">
-                            <a href="#">
+                            <a href="../katana/contents/as_center.html">
                                 <img class="mr10px" src="../katana/images/as_icon.png" alt="as_icon">
                                 <span class="fw_bold">A/S 센터</span>
                             </a>

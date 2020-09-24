@@ -141,8 +141,23 @@
      .wrap .contents .asArea .asAt_middle h2,.wrap .contents .asArea .asAt_middle h3 { margin-bottom: 20px; }
      .wrap .contents .asArea .asA_middle .asAm_txt h3 { font-size: 32px; }
      .wrap .contents .asArea .asA_middle .asAm_table .period_txt { display:block; padding-bottom: 0; }
-     .wrap .contents .asArea .asAm_table .as_table .display_none { display: none; }
+     .display_none { display: none; }
      .wrap .contents .asArea .asAm_table .as_table .ast_contents, .wrap .contents .asArea .asAm_table .as_table td:not(.f30) { font-size: 18px; }
+
+     /*inquery_contents*/
+     .wrap .inquery_contents .ic_top h2,.wrap .inquery_contents .ic_middle h3 { font-size: 20px; font-weight: 600; }
+     .wrap .inquery_contents .ic_top h3 p { font-size: 16px; }
+
+     /*login*/
+     .wrap .login_contents .login_box { width: 100%; margin: 10% auto; }
+     .wrap .login_contents .login_box h2 { font-size: 22px; margin-bottom: 20px; }
+
+    /*register_form(회원정보 수정, 회원가입)*/
+    .wrap .member_contents .member_wrap .basic_info { margin-bottom: 10%; }
+    .wrap .member_contents .member_wrap .mb_content .mb_input { width: 100%; margin-right: 0; }
+    .wrap .member_contents .member_wrap .mb_content .mb_subject { width: 100%; }
+    .wrap .member_contents .member_wrap .add_info .address_box { margin-bottom: 10px; }
+    .wrap .member_wrap .mb_middle .regi_btn { margin: 50px 0; }
 }
 @media(max-width:500px) {
     
@@ -205,4 +220,23 @@
     .wrap .contents .asArea .asA_top .asAt_middle ul li div { margin-bottom: 10px; border-radius: 16px; }
     .wrap .contents .asArea .asA_top .asAt_middle ul li img { width: 20px; }
     .wrap .contents .asArea .asAm_table .as_table .ast_contents, .wrap .contents .asArea .asAm_table .as_table td:not(.f30) { font-size: 13px; }
+
+    /*inquery_contents*/
+    .wrap .inquery_contents .ic_btn input { font-size: 15px; padding: 5px 10px; }
+    .wrap .inquery_contents .iq_table td, .wrap .inquery_contents .iq_table th { font-size: 12px; }
+
+    /*login*/
+    .wrap .login_contents .login_box h2 { font-size: 17px; }
+    .wrap .login_contents .login_box .logbox_btn input { padding: 10px; }
+    .wrap .login_contents .login_box .lb_bottom input:not(.id_save) { padding: 10px; font-size: 12px; }
+    .wrap .login_contents .login_box .lb_bottom .lbmb_check { margin: 10px auto; font-size: 11px; }
+
+    /*register_form(회원정보 수정, 회원가입)*/
+    .wrap .member_contents .mb_top h2 { font-size: 24px; }
+    .wrap .member_contents .member_wrap .basic_info h4 { font-size: 17px; }
+    .wrap .member_contents .member_wrap .mb_content .mb_input input { font-size: 14px; }
+    .wrap .member_contents .member_wrap .add_info .mb_content .mb_input #r_zip_btn input { width: 60%; }
+    .wrap .member_contents .member_wrap .mb_content .mb_subject { font-size: 14px; }
+    .wrap .member_wrap .mb_middle .regi_btn button { font-size: 14px; }
+    .wrap .zip_btn a { padding: 5px 20px; }
 } 

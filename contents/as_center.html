@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATANA GOLF</title>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/jquery.transit.min.js"></script>
+    <!--goolge webfont-->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--css-->
+    <link rel="stylesheet" href="../css/import.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<script>
+    $(document).ready( function(){
+        //검색아이콘 눌렀을때 
+        $('#w_search_icon').click( function(){
+            $('#M_search_box').slideToggle();
+        });
+        $('.Msb_top_close').click( function(){
+            $('#M_search_box').slideToggle();
+        });
+
+        //모바일일때 메뉴아이콘 클릭시
+        $('#M_menu_icon').click( function(){
+            $('.header_middle').css('right','0');
+            $('.menu_bg').toggle();
+        });
+        $('.menu_bg,.M_close_btn').click( function(){
+            $('.header_middle').css('right','-100%');
+            $('.menu_bg').toggle();
+        });
+    });
+</script>
+<body>
+    <!--wrap {-->
+    <div class="wrap">
+        <!--menu click bg call-->
+        <div class="menu_bg"></div>
+        <!--header {-->
+        <header class="bor_bottom">
+            <div class="header_wrap dw_1400px">
+                <div class="header_left"><a href="../index.html"><img src="../images/katana_logo.png" alt="main logo image"></a></div>
+                
+                <nav class="header_middle">
+                    <a href="javascript:;"><img class="M_close_btn" src="../images/M_close_btn.png" alt="Mobile close btn"></a>
+                    <ul class="over_hidden">
+                        <li class="M_login_btn">
+                            <a href="#">로그인/회원가입</a>
+                        </li>
+
+                        <li>
+                            <a href="../product/product_list.html">드라이버</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">페이웨이우드</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">유틸리티/웨지</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">아이언</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">피터</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">볼</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">벡</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header_right over_hidden">
+                   <a href="#"><img id="w_search_icon" src="../images/M_search_icon.png" alt="search icon"></a>
+                   <a href="#"><img id="M_member_icon" src="../images/M_member_icon.png" alt="Mobile member icon"></a>
+                   <a class="web_txt" href="#">로그인</a>
+                   <!--로그인 후에는  회원가입 삭제 -> #M_member_icon 넣어주세요 -->
+                   <!-- <a class="web_txt" href="#">로그아웃</a> -->
+                   <a class="web_txt" href="#">회원가입</a>
+                   <a href="#"><img id="M_cart_icon" src="../images/M_cart_icon.png" alt="Mobile cart icon"></a>
+                   <a class="web_txt" href="#">장바구니</a>
+                   <a href="#"><img id= "M_menu_icon" src="../images/M_menu_icon.png" alt="Mobile menu icon"></a>
+                </div>
+            </div>
+
+            <div id="M_search_box">
+                <div>
+                    <a class="Msb_top_close" href="#"><img src="../images/close_btn.png" alt="close_btn"></a>
+                </div>
+
+                <form action="" class="Msb_middle">
+                    <div class="search_box t_center over_hidden">
+                        <input type="text" placeholder="상품검색">
+                        <button><img src="../images/search_icon.png" alt="search_icon"></button>
+                    </div>
+                </form>
+            </div>
+        </header>
+        <!--} header-->
+        
+        <!--contents {-->
+        <section class="contents">
+            <!--asArea {-->
+            <div class="asArea">
+                <section class="asA_top">
+                    <img class="w100" src="../images/as_top.png" alt="brand image"> 
+                    <div class="asAt_middle">
+                        <h2 class="fw_bold">AS안내</h2>
+                        <h3 class="fw_bold">AS절차</h3>
+
+                        <ul>
+                            <li class="f30"><div>AS 내용 확인</div></li>
+                            <li class="f30"><img src="../images/ASright_arrow.png" alt="right arrow image"><div>AS 접수</div></li>
+                            <li class="f30"><img src="../images/ASright_arrow.png" alt="right arrow image"><div>결제</div></li>
+                            <li class="f30"><img src="../images/ASright_arrow.png" alt="right arrow image"><div>수리</div></li>
+                            <li class="f30"><img src="../images/ASright_arrow.png" alt="right arrow image"><div>발송</div></li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section ction class="asA_middle dw_1400px">
+                    <div class="asAm_txt over_hidden">
+                        <h3 class="f60 mb20px fw_bold">접수방법</h3>
+                        <ul>
+                            <li>• 본사 고객센터 내방 (2~3일 소요)</li>
+                            <li>• 카타나(스워드) 취급점 위탁 (3~5일) </li>
+                            <li>• 고객택배 직배송 (3~5일)</li>
+                        </ul>
+                    </div>
+
+                    <div class="asAm_txt">
+                        <h3 class="f30 mb20px fw_bold">AS센터 안내</h3>
+                        <p>서울특별시 중구 소공로35 롯데캐슬 아이리스 3층 315호 </p>
+                        <ul>
+                            <li><span>Tel.</span> 02-501-6955-8255</li>
+                            <li><span>Fax.</span> 02-538-0116 AS 센터</li>
+                            <li><span>Tel.</span> 02-737-4444</li>
+                        </ul>
+                    </div>
+
+                    <div class="asAm_txt">
+                        <h3 class="f30 mb20px fw_bold">AS 적용 규정</h3>
+                        <p class="as_f_color fw_bold">무상 AS보증기간 내 품질보증은 정상적인 사용방법인 경우 사용 중 제품에 발생 된 이상현상 및 파손에 대하여</p>
+                        <p class="as_f_color fw_bold">무상으로 수리해 드리는 것을 의미합니다.</p>
+                        <p>• 카타나 골프 코리아를 통해 수입 및 출고된 제품으로 그기간은 1년으로 한다. </p>
+                        <p>• 보증기간 내 무상교환의 경우는 기본적으로 동일모델, 이후 후속 모델 순으로 순차 적용하여 교환진행 됩니다. </p>
+                        <p>• 무상보증기간은 고객이 제품을 최초로 구매한 날로부터 1년간 적용되며 무상 AS기간 내 무상으로 제품교환이 되는 경우 무상 AS</p>
+                        <p>기간이 추가 연장되거나 기간이 변경되지 않습니다. </p>
+                        <p>• 무상 AS 기간 적용 시 제품 구매일이 명확하지 않은 경우 구매일 증빙자료(지불내역 및 결재영수증)가 요구될 수 있으며 구매일</p>
+                        <p>증빙이 불가능한 경우는 당사기준 해당 제품의 출고일을 기준으로 무상AS기간을 적용하게 됩니다.</p>
+                        <p>• 제품의 유통 특성상 제품에 따라 고객이 실제 구매한 일자와 당사 출고 일자의 차이가 발생될 수 있습니다. 이는 제품 유통 과정상</p>
+                        <p>불가피하게 발생 될 수 있는 경우이므로 정상적인 모든 AS보증을 받으시기 위해서는 구매 후 보증기간 동안 반드시 영수증을 보관해</p>
+                        <p>주실 것을 요청 드립니다.</p>
+                        <p>• 카타나골프(SWORD)의 정품으로 확인 된 제품이라 하더라도 이전에 일반 수리업체를 통해 수리한 경우에는 무상보증기간 이라도</p>
+                        <p>정상적인 AS가 불가합니다. 또한 모조 클럽으로 확인된 경우는 당사에서 수리를 진행해 드리지 않습니다.</p>
+                    </div>
+
+                    <div class="asAm_txt">
+                        <h3 class="f30 mb20px fw_bold">유상 AS 적용 안내</h3>
+                        <p>• 카타나골프(SWORD) 제품의 정품 확인은 제품에 장착되어있는 바코드를 기준으로 진행하며 제품의 최초 구매일 및 출고일기준</p>
+                        <p>최대 1년이 경과한 다음 날부터 유상 AS로 적용 진행됩니다.</p>
+                        <p>• 일반적으로 무상 AS은 최장 1년까지 보장되나 제품의 정상적인 사용 유형을 벗어나 발생된 파손유형이나 사용자 과실로 인정되는</p>
+                        <p>파손의 경우는 무상 AS보증기간 이내라도 그 파손 형태에 따라 유상 AS로 적용되어 비용이 발생될 수 있습니다. '정상적인 시용</p>
+                        <p>유형을 벗어난 파손'이라 함은 일반적으로 고객의 과실 및 사용미숙으로 파손되는 모든 유형을 포함하며 헤드 페이스와 헤드 페이스를</p>
+                        <p>둘러싼 주변부(헤드 페이스와 동일소재로 된 한 조각의 구조를 모두 헤드페이스로 인정함)를 제외한 나머지 헤드의 파손은 그 유형에</p>
+                        <p>따라 무상 AS기간 내의 경우라도 유상 적용으로 AS수리 및 교환이 진행될 수 있습니다.</p>
+                        <p>• 카타나골프 (SWORD)의 제품인 경우라도 일본 현지 직접구매 에서 유통시킨 제품(정품인증 스티커를 기준으로 함)이 아닌 경우는</p>
+                        <p>유상 AS로 처리되며 카타나 (SWORD)의 정품 클럽인 경우 라도 정품인증 바코드가 없어 출고일 및 구매일 확인이 불가능한 경우에는</p>
+                        <p>유상 AS로 처리 됩니다.</p>
+                        <p>• 무상 AS보증기간 내 클럽의 스펙을 변경하기 위한 교환하게 되거나 임의로 피팅을 했을시 무상 AS기간과 상관없이 유상으로 처리</p>
+                        <p>됩니다.</p>
+                        <p>• 병행클럽은 한국 외 다른 나라에서 구매하신 SWORD 제품과 한국 카타골프에서 유통 시키지 않은 SWORD 제품을 포함하여</p>
+                        <p>의미합니다. 병행클럽의 경우는 구매일과 관계없이 무상 보증 기간이 적용되지 않습니다. 일부 AS 유형에 대한 유상 AS(수리&</p>
+                        <p>교환)는 가능합니다.</p>
+                    </div>
+
+                    <div class="asAm_txt">
+                        <h3 class="f30 mb20px fw_bold">유상 AS 적용 기준</h3>
+                        <p class="as_f_color fw_bold"> [AS & Replacement 처리기준] 무상 AS기간은 구매 후 1년으로 규정</p>
+                        <p>• 모든 소비자 과실은 위의 기준에서 제외, 유상처리 적용 됩니다.</p>
+                        <p>• AS 기간 설정에 있어, 법적으로는 제조일 또는 통관일을 기준으로 하고 있으나 당사는 출고일을 기준으로 합니다.</p>
+                        <p>• 아래의 내용은 당사가 공급한 제품에 대해서 적용되며, 당사의 비 공급 제품들에 대해서는 당사의 별도 룰을 기준으로 처리합니다.</p>
+                        <p>• 모든 AS 접수 시는 당사의 Process(소요시간 & 배송방법 등)를 기준으로 합니다.</p>
+                        <p>• 모든 유상 AS 및 유상 Replacement 시의 적용 가격 및 대상 모델 지정은 당사 기준에 준하여 정해집니다.</p>
+                        <p>• 유, 무상으로 부속(샤프트, 그립 등)이 교체되는 경우는 원산지표시 규정에 따라 부속수입국의 원산지가 추가로 표기되며 최초</p>
+                        <p>제품구매시의 표기된 내용과 달라지거나 추가될 수 있습니다. 또한, 최초 판매시점으로부터(출시점 기준) 5년 이상 경과된 제품의</p>
+                        <p>부속이 교체되는 경우에는 동일스펙(스펙의 허용오차 범위 포함)의 유사모델 (부속)로 대체 될 수 있으며, 보증기간(출시 기준 1년)이</p>
+                        <p>경과된 제품의 교환 AS 진행 시와 모든 유상교환 AS의 경우는 AS 교환 시점 기준으로 판매 가능한 모든 모델을 교환 대상으로 합니다.</p>
+                        <p>• 법적근거 : 재정경제부 소속 소비자보호원 내 소비자피해보상 범위에 근거한 보상기준을 적용/준수합니다.</p>
+                    </div>
+
+                    <div class="asAm_txt">
+                        <h3 class="f30 mb20px fw_bold">보증수리 규정</h3>
+                        <p>• 카타나 골프 코리아 출고제품의 소비자로서 다음 사항에 해당하는 경우 전면 무상수리 해드립니다.</p>
+                        <p>1) AS 보증기간 : 구입일로부터 1년(미확인시 본사 전산 출고 기준) 품질보증 기간 내에 정상적인 사용이아 관리를 하였을 경우</p>
+                        <p>• 보증기간 중이라도 다음에 해당되는 경우에는 유상 서비스 요금이 부과됩니다. </p>
+                        <p>1) 천재지변, 화재에 의한 파손 </p>
+                        <p>2) 소비자의 과실 및 관리 부주의로 판단 될 경우</p>
+                        <p>3) 비정상적인 사용이나 관리를 하였을경우 (비공인헤드 2회 이상 파손)</p>
+                        <p>4) 정품 AS스티커를 분실한 경우</p>
+                    </div>
+
+                    <div class="asAm_table">
+                        <table class="as_table">
+                            <thead>
+                              <tr>
+                                <th class="ast_contents fw_bold">부위<br></th>
+                                <th class="ast_contents fw_bold">상세</th>
+                                <th class="ast_contents fw_bold">증상</th>
+                                <th class="ast_contents fw_bold display_none">보증 기간 내<br></th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr>
+                                <td class="ast_contents fw_bold f30 white_bg" rowspan="2">헤드</td>
+                                <td class="ast_contents">페이스</td>
+                                <td class="ast_contents white_bg">헤드크릭</td>
+                                <td class="ast_contents display_none" rowspan="6">무상 수리<br></td>
+                              </tr>
+
+                              <tr>
+                                <td class="ast_contents">기타<br></td>
+                                <td class="ast_contents white_bg">이물질 소리<br></td>
+                              </tr>
+
+                              <tr>
+                                <td class="ast_contents fw_bold f30 white_bg" rowspan="2">샤프트</td>
+                                <td class="ast_contents">하단 5cm 내(훼럴부터)<br></td>
+                                <td class="ast_contents white_bg">파손</td>
+                              </tr>
+
+                              <tr>
+                                <td class="ast_contents">전부위</td>
+                                <td class="ast_contents white_bg">이물질 소리<br></td>
+                              </tr>
+
+                              <tr>
+                                <td class="ast_contents fw_bold f30 white_bg" rowspan="2">접합부위</td>
+                                <td class="" rowspan="2"></td>
+                                <td class="ast_contents white_bg">샤프트 빠짐<br></td>
+                              </tr>
+
+                              <tr>
+                                <td class="ast_contents white_bg">훼렐 움직임<br></td>
+                              </tr>
+
+                            </tbody>
+                        </table>
+
+                        <p class="as_f_color period_txt">*보증기간내 무상수리가능</p>
+
+                        <table class="as_table">
+                            <thead>
+                              <tr>
+                                <th class="ast_contents fw_bold">부위</th>
+                                <th class="ast_contents fw_bold">상세</th>
+                                <th class="ast_contents fw_bold">증상<br></th>
+                                <th class="ast_contents fw_bold display_none">보증 기간 내<br></th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr>
+                                <td class="ast_contents fw_bold f30 white_bg" rowspan="3">헤드</td>
+                                <td class="ast_contents">페이스</td>
+                                <td class="ast_contents white_bg">헤드함몰</td>
+                                <td class="ast_contents display_none" rowspan="4">무상수리</td>
+                              </tr>
+
+                              <tr>
+                                <td class="ast_contents" rowspan="2">크라운 및 솔<br></td>
+                                <td class="ast_contents white_bg">스크래치</td>
+                              </tr>
+
+                              <tr>
+                                <td class="ast_contents white_bg">함몰<br></td>
+                              </tr>
+
+                              <tr>
+                                <td class="ast_contents fw_bold f30 white_bg">샤프트</td>
+                                <td class="ast_contents">하단 5cm (훼럴부터)의 전부분<br></td>
+                                <td class="ast_contents white_bg">파손</td>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="asAm_txt">
+                        <h3 class="f30 mb20px fw_bold">제품교환 규정</h3>
+                        <p>• 고객이 수리 의뢰한 제품을 본사가 분실 및 손상을 입힌 경우</p>
+                        <p>• 미 사용 제품의 결함 발견 (어떠한 경우에도 사용한 제품의 경우는 보증수리 규정에 의거함니다.)</p>
+                        <p>1) 클럽 수리시 발생하는 자제들은 반납하시는 조건하에 유상, 무상 수리가 가능합니다.</p>
+                        <p>2) 타 Repair/Fitting Center를 이용하여 클럽을 수리 또는 변조한 경우에는 어떠한 경우라도 클럽의 헤드 및 샤프트에 대하여</p>
+                        <p>무상수리를 받을 수 없습니다. </p>
+                        <p>3) 소비자의 구질이나 스윙습관에 맞추기 위해 Fitting을 실시 할 경우에는 유상처리 됩니다. </p>
+                        <p>4) AS 완료된 제품은 AS 접수일로부터 최장 3개월 이내 반드시 수령하셔야 하며, 3개월 이상 경과된 제품의 분실 및 훼손 등에 대하여</p>
+                        <p>당사에서는 일체의 책임을 지지 않습니다.</p>
+                    </div>
+
+                    <div class="asAm_txt">
+                        <h3 class="f30 mb20px fw_bold">AS 불가한 경우</h3>
+                        <p>확실한 결함의 발견 없이 갑작스런 거리 감소 및 방향성 이상 그리고 타구음 이상 등  </p>
+                        <p>지극히 주관적인 견해에 따른 수리요청은 AS가 불가합니다.</p>
+                    </div>
+                </section>  
+            </div>
+            <!--} asArea-->
+        </section>
+        <!--} contents-->
+
+        <!--footer {-->
+        <footer class="katana_bg_color">
+            <!--ft_top {-->
+            <div class="ft_top">
+                <div class="dw_1400px over_hidden ft_top_wrap">
+                    <ul class="over_hidden t_center">
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../images/customer_icon.png" alt="customer_icon">
+                                <span class="fw_bold">고객센터</span>
+                            </a>
+                        </li>
+                        
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../images/way_icon.png" alt="way_icon">
+                                <span class="fw_bold">오시는 길</span>
+                            </a>
+                        </li>
+                        
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../images/as_icon.png" alt="as_icon">
+                                <span class="fw_bold">A/S 센터</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--} ft_top-->
+            
+            <!--ft_middle {-->
+            <div class="ft_middle dw_1400px">
+                <ul class="ftm_top mb10px">
+                    <li><strong class="fw_bold">(주)카타나골프</strong>서울특별시 중구 소공로35 롯데캐슬 아이리스 3층 315호</li>
+                    <li>대표: 김홍득 Tel: 02-501-6955-8255</li>
+                    <li>Fax: 02-538-0116</li>
+                    <li>A/S센터: 02-737-4444</li>
+                </ul>
+
+                <p>본 사이트의 상품이미지 저작권은 카타나골프에 있으며, 내용의 무단복제를 금합니다.</p>
+                
+                <p class="ftm_middle"><strong>KATANA GOLF Co.,LTD</strong> &nbsp;&nbsp;All Rights Reserved.</p>
+
+                <ul class="ftm_bottom">
+                    <li><a href="#">통합회원</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보 처리방침</a></li>
+                    <li><a href="#">사업자 정보 확인</a></li>
+                    <li><a href="#">공지사항 FAQ</a></li>
+                </ul>
+            </div>
+            <!--} ft_middle-->
+        </footer>
+        <!--} footer-->
+    </div>
+    <!--} wrap-->
+</body>
+</html>
