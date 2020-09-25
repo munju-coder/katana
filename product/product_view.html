@@ -39,359 +39,354 @@
         });
     });
 </script>
-<body>
-    <!--wrap {-->
-    <div class="wrap">
-        <!--menu click bg call-->
-        <div class="menu_bg"></div>
-        <!--header {-->
-        <header class="bor_bottom">
-            <div class="header_wrap dw_1400px">
-                <div class="header_left"><a href="../index.html"><img src="../images/katana_logo.png" alt="main logo image"></a></div>
-                
-                <nav class="header_middle">
-                    <a href="javascript:;"><img class="M_close_btn" src="../images/M_close_btn.png" alt="Mobile close btn"></a>
-                    <ul class="over_hidden">
-                        <li class="M_login_btn">
-                            <a href="#">로그인/회원가입</a>
-                        </li>
-
-                        <li>
-                            <a href="../product/product_list.html">드라이버</a>
-                        </li>
-    
-
-                        
-                        <li>
-                            <a href="#">페이웨이우드</a>
-                        </li>
-    
-                        <li>
-                            <a href="#">유틸리티/웨지</a>
-                        </li>
-    
-                        <li>
-                            <a href="#">아이언</a>
-                        </li>
-    
-                        <li>
-                            <a href="#">피터</a>
-                        </li>
-    
-                        <li>
-                            <a href="#">볼</a>
-                        </li>
-                        
-                        <li>
-                            <a href="#">벡</a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <div class="header_right over_hidden">
-                   <a href="#"><img id="w_search_icon" src="../images/M_search_icon.png" alt="search icon"></a>
-                   <a href="#"><img id="M_member_icon" src="../images/M_member_icon.png" alt="Mobile member icon"></a>
-                   <a class="web_txt" href="#">로그인</a>
-                   <!--로그인 후에는  회원가입 삭제 -> #M_member_icon 넣어주세요 -->
-                   <!-- <a class="web_txt" href="#">로그아웃</a> -->
-                   <a class="web_txt" href="#">회원가입</a>
-                   <a href="#"><img id="M_cart_icon" src="../images/M_cart_icon.png" alt="Mobile cart icon"></a>
-                   <a class="web_txt" href="#">장바구니</a>
-                   <a href="#"><img id= "M_menu_icon" src="../images/M_menu_icon.png" alt="Mobile menu icon"></a>
-                </div>
-            </div>
-
-            <div id="M_search_box">
-                <div>
-                    <a class="Msb_top_close" href="#"><img src="../images/close_btn.png" alt="close_btn"></a>
-                </div>
-
-                <form action="" class="Msb_middle">
-                    <div class="search_box t_center over_hidden">
-                        <input type="text" placeholder="상품검색">
-                        <button><img src="../images/search_icon.png" alt="search_icon"></button>
-                    </div>
-                </form>
-            </div>
-        </header>
-        <!--} header-->
-
-        <section class="product_view">
-            <div class="prv_wrap dw_1400px over_hidden">
-                <script>
-                    $(document).ready( function(){
-                        var MainImg = $('.prv_main_img a img').attr('src');
-
-                        $('.prv_img ul li a img').mouseover( function(){
-                            // console.log($(this).attr('src'));
-                            $('.prv_main_img a img').attr('src',$(this).attr('src'));
-                            
-                        }).mouseout( function(){
-                            // console.log(img);
-                            $('.prv_main_img a img').attr('src',MainImg);
-                        });
-
-                        $('.tablinks').each( function(){
-                            $(this).click( function(){
-                                
-                                $(".tablinks").removeClass("border_active");
-                                $(this).addClass("border_active");
-
-                                $(".tabcontent").removeClass("tab_active");
-                                $(".tabcontent").css("display", "none");
-
-                                var chk = $(this).attr("tab_name");
-                                $('#' + chk).css("display", "block");
-
-                            });
-                            
-                        });
-                    });
-                </script>
-
-                <div class="prv_img">
-                    <ul>
-                        <li><a href="#"><img src="../images/pro_img2.jpg" alt="small product image"></a></li>
-                        <li><a href="#"><img src="../images/pro_img3.jpg" alt="small product image"></a></li>
-                    </ul>
-
-                    <div class="prv_main_img"><a href="#"><img src="../images/pro_img1.png" alt="main product image"></a></div>
-                </div>
-
-                <div class="pro_txt">
-                    <div class="proTxt_top">
-                        <p class="f_color_81">상품번호 : <span>5004569250</span></p>
-                        <h2>SWORD FAIRWAY WOOD</h2>
-                        <ul>
-                            <li class="w20"><div>33%</div></li>
-                            <li class="w30 mt10px"><span><del>2,100,000</del>원</span></li>
-                            <li class="w50 fw_bold"><span class="pro_price">1,400,000</span>원</li>
-                        </ul>
-                    </div>
-
-                    <div class="proTxt_middle">
-                        <ul>
-                            <li>사용가능 적립금</li>
-                            <li>옵션</li>
-                            <li>수량</li>
-                            <li>배송비</li>
-                        </ul>
-
-                        <ul>
-                            <li class="f_color_81">로그인 후 확인하세요</li>
-                            <!--로그인 후 적용해주세요-->
-                            <!-- <li><span class="point_price">1,000</span>p</li> -->
-                            <li class="select_li">
-                                <select name="" id="">
-                                    <option value="">옵션을 선택하세요</option>
-                                    <option value="">15도/43인치</option>
-                                </select>    
+    <body>
+        <!--wrap {-->
+        <div class="wrap">
+            <!--menu click bg call-->
+            <div class="menu_bg"></div>
+            <!--header {-->
+            <header class="bor_bottom">
+                <div class="header_wrap dw_1400px">
+                    <div class="header_left"><a href="../index.html"><img src="../images/katana_logo.png" alt="main logo image"></a></div>
+                    
+                    <nav class="header_middle">
+                        <a href="javascript:;"><img class="M_close_btn" src="../images/M_close_btn.png" alt="Mobile close btn"></a>
+                        <ul class="over_hidden">
+                            <li class="M_login_btn">
+                                <a href="#">로그인/회원가입</a>
                             </li>
 
-                            <li class="cnt_li">
-                                <div class="count_box_center over_hidden">
-                                    <div class="count_input over_hidden"> 
-                                        <input type="button" value="-" id="minus" onclick="numMinus()">
-                                        <input type="text" id="cnt" name="amount[]" class="cnt_input w70px" value="1" readonly="">
-                                        <input type="button" id="plus" value="+" onclick="numPlus()">
-                                    </div>
-                                </div>
+                            <li>
+                                <a href="../product/product_list.html">드라이버</a>
+                            </li>
+        
+
+                            
+                            <li>
+                                <a href="#">페이웨이우드</a>
+                            </li>
+        
+                            <li>
+                                <a href="#">유틸리티/웨지</a>
+                            </li>
+        
+                            <li>
+                                <a href="#">아이언</a>
+                            </li>
+        
+                            <li>
+                                <a href="#">피터</a>
+                            </li>
+        
+                            <li>
+                                <a href="#">볼</a>
                             </li>
                             
-                            <li>무료배송</li>
-                            
+                            <li>
+                                <a href="#">벡</a>
+                            </li>
                         </ul>
+                    </nav>
+
+                    <div class="header_right over_hidden">
+                    <a href="#"><img id="w_search_icon" src="../images/M_search_icon.png" alt="search icon"></a>
+                    <a href="#"><img id="M_member_icon" src="../images/M_member_icon.png" alt="Mobile member icon"></a>
+                    <a class="web_txt" href="#">로그인</a>
+                    <!--로그인 후에는  회원가입 삭제 -> #M_member_icon 넣어주세요 -->
+                    <!-- <a class="web_txt" href="#">로그아웃</a> -->
+                    <a class="web_txt" href="#">회원가입</a>
+                    <a href="#"><img id="M_cart_icon" src="../images/M_cart_icon.png" alt="Mobile cart icon"></a>
+                    <a class="web_txt" href="#">장바구니</a>
+                    <a href="#"><img id= "M_menu_icon" src="../images/M_menu_icon.png" alt="Mobile menu icon"></a>
+                    </div>
+                </div>
+
+                <div id="M_search_box">
+                    <div>
+                        <a class="Msb_top_close" href="#"><img src="../images/close_btn.png" alt="close_btn"></a>
                     </div>
 
+                    <form action="" class="Msb_middle">
+                        <div class="search_box t_center over_hidden">
+                            <input type="text" placeholder="상품검색">
+                            <button><img src="../images/search_icon.png" alt="search_icon"></button>
+                        </div>
+                    </form>
+                </div>
+            </header>
+            <!--} header-->
+
+            <!--product_view {-->
+            <section class="product_view">
+                <div class="prv_wrap dw_1400px over_hidden">
                     <script>
-                        var num=1;
-      
-       
-                        function numPlus(){
-                            num++;
-                            document.getElementById('cnt').value = num;
-                        }
-                        function numMinus(){
-                            if (num>1) {
-                                num--;
-                                document.getElementById('cnt').value = num;
-                            }
+                        $(document).ready( function(){
+                            var MainImg = $('.prv_main_img a img').attr('src');
 
-                        }
+                            $('.prv_img ul li a img').mouseover( function(){
+                                // console.log($(this).attr('src'));
+                                $('.prv_main_img a img').attr('src',$(this).attr('src'));
+                                
+                            }).mouseout( function(){
+                                // console.log(img);
+                                $('.prv_main_img a img').attr('src',MainImg);
+                            });
+
+                            $('.tablinks').each( function(){
+                                $(this).click( function(){
+                                    
+                                    $(".tablinks").removeClass("border_active");
+                                    $(this).addClass("border_active");
+
+                                    $(".tabcontent").removeClass("tab_active");
+                                    $(".tabcontent").css("display", "none");
+
+                                    var chk = $(this).attr("tab_name");
+                                    $('#' + chk).css("display", "block");
+
+                                });
+                                
+                            });
+                        });
                     </script>
 
-                    <div class="proTxt_bottom">
+                    <div class="prv_img">
                         <ul>
-                            <li>총금액</li>
-                            <li><span class="total_price">1,400,000</span>원</li>
+                            <li><a href="#"><img src="../images/pro_img2.jpg" alt="small product image"></a></li>
+                            <li><a href="#"><img src="../images/pro_img3.jpg" alt="small product image"></a></li>
                         </ul>
 
-                        <div class="buy_button">
-                            <div class="cart_btn cursor_p t_center">장바구니</div>
-                            <div class="buy_btn cursor_p t_center">구매하기</div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <section class="pro_tab">
-                <div class="dw_1400px over_hidden">
-                    <div class="info_tab over_hidden">
-                        <button class="tablinks f25 border_active" tab_name="tab1">상품정보</button>
-                        <button class="tablinks f25" tab_name="tab2">배송정보</button>
-                        <button class="tablinks f25" tab_name="tab3">교환정보</button>
-                    </div>
-            
-                    <div class="tabcontent tab_active over_hidden detailPage" id="tab1">
-                        <img class="w100 w_img" src="../images/w_page_Hi-Fi 9L.jpg" alt="katana_detai_view">
-                        <img class="w100 m_img" src="../images/m_page_Hi-Fi 9L.jpg" alt="katana_detai_view">
+                        <div class="prv_main_img"><a href="#"><img src="../images/pro_img1.png" alt="main product image"></a></div>
                     </div>
 
-                    <div class="tabcontent over_hidden" id="tab2">
-                        <div class="p_delivery">
-                            <h3 class="fw_bold mb20px">배송 안내</h3>
-                            <table class="w100 f14">
-                                <tbody>
-                                    <tr>
-                                        <th class="pd1per">배송유형</th>
-                                        <th>내용</th>
-                                        <th>배송비</th>
-                                     </tr>
-                                </tbody>
-                                
-                                <tbody>
-                                    <tr>
-                                        <th class="pd1per">택배배송</th>
-                                        <td class="t_left">
-                                            <div class="d_info">
-                                                <ul class="mb3">
-                                                    <li><strong class="fw_bold">업체 및 산지에서 택배로 배송</strong></li>
-                                                    <li>일요일/공휴일 포함 시 추가 배송기일 소요</li>
-                                                    <li>설치 상품의 경우 업체에서 사전연락</li>
-                                                    <li>주문제작 상품 및 상품 재고상황, 택배사 사정에 의해 배송 지연 될 수 있음</li>
-                                                    <li>희망발송일 등 고객 별도 요청에 의해 배송기일과 배송비 변경될 수 있음</li>
-                                                    <li>도서산간 지역일 경우에는 배송비가 추가로 발생할 수 있습니다.</li>
-                                                </ul>
+                    <div class="pro_txt">
+                        <form action="">
+                            <div class="proTxt_top">
+                                <p class="f_color_81">상품번호 : <span>5004569250</span></p>
+                                <h2>SWORD FAIRWAY WOOD</h2>
+                                <ul>
+                                    <li class="w20"><div>33%</div></li>
+                                    <li class="w30 mt10px"><span><del>2,100,000</del>원</span></li>
+                                    <li class="w50 fw_bold"><span class="pro_price">1,400,000</span>원</li>
+                                </ul>
+                            </div>
+
+                            <div class="proTxt_middle">
+                                <ul>
+                                    <li>사용가능 적립금</li>
+                                    <li>옵션</li>
+                                    <li>수량</li>
+                                    <li>배송비</li>
+                                </ul>
+
+                                <ul>
+                                    <li class="f_color_81">로그인 후 확인하세요</li>
+                                    <!--로그인 후 적용해주세요-->
+                                    <!-- <li><span class="point_price">1,000</span>p</li> -->
+                                    <li class="select_li">
+                                        <select name="" id="">
+                                            <option value="">옵션을 선택하세요</option>
+                                            <option value="">15도/43인치</option>
+                                        </select>    
+                                    </li>
+
+                                    <li class="cnt_li">
+                                        <div class="count_box_center over_hidden">
+                                            <div class="count_input over_hidden"> 
+                                                <input type="button" value="-" id="minus">
+                                                <input type="text" id="cnt" name="amount[]" class="cnt_input w70px" value="1" readonly="">
+                                                <input type="button" id="plus" value="+">
                                             </div>
-                                        </td>
+                                        </div>
+                                    </li>
+                                    
+                                    <li>무료배송</li>
+                                </ul>
+                            </div>
 
-                                        <td class="t_left">
-                                            <div class="d_info td_p">상품상세 상단 배송비 참조</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-            
-                    <div class="tabcontent over_hidden" id="tab3">
-                        <div class="p_return_info">
-                            <h3 class="fw_bold mb20px">교환 및 반품 안내</h3>
-                            <table class="w100 f14">
-                                <tbody>
-                                    <tr>
-                                        <th class="pd1per">교환/반품/신청기간</th>
-                                        <td class="t_left">
-                                            <ul>
-                                                <li>교환/취소/반품/교환/환불은 배송 완료 후 7일 이내에 가능합니다.</li>
-                                                <li>고객님이 받으신 상품의 내용이 표시 광고 및 계약 내용과 다른 경우 상품을 수령하신 날로부터 7일 이내가능합니다.</li><li>
-                                            </li></ul>
-                                        </td>
-                                    </tr>
-    
-                                    <tr>
-                                        <th class="pd1per">교환/반품 회수(배송) 비용</th>
-                                        <td class="t_left">
-                                            <ul>
-                                                <li>상품의 불량/하자 및 표시광고 및 계약 내용과 다른 경우 해당 상품 회수(배송)비용은 무료이나,</li>
-                                                <li>고객님의 단순변심 및 색상/사이즈 불만에 관련된 교환/반품의 경우 택배비는 고객님 부담입니다.</li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <th class="pd1per">교환/반품 불가 안내</th>
-                                        <td class="t_left">
-                                            <ul class="p_info_detail">
-                                                <li>고객님이 상품 포장을 개봉하여 사용 또는 설치 완료되어 상품의 가치가 훼손된 경우 (단, 내용 확인을 위한 포장개봉의경우는 예외)</li>
-                                                <li>고객님의 단순변심으로 인한 교환/반품 신청이 상품 수령한 날로부터 7일이 경과한 경우</li>
-                                                <li>고객님의 사용 또는 일부 소비에 의해 상품의 가치가 훼손된 경우</li>
-                                                <li>시간 경과에 따라 상품 등의 가치가 현저히 감소하여 재판매가 불가능한 경우</li>
-                                                <li>복제가 가능한 재화 등의 포장을 훼손한 경우(DVD, CD, 도서 등 복제 가능한 상품)</li>
-                                                <li>설치상품으로 고객님이 이상 여부를 확인한 후 설치가 완료된 상품의 경우(가전, 가구, 헬스기구 등)</li>
-                                                <li>고객님의 요청에 따라 개별적으로 주문제작되는 상품으로 재판매가 불가능한 경우(이니셜 표시상품, 사이즈맞춤상품 등</li>
-                                                <li>구매한 상품의 구성품이 누락된 경우(화장품 세트, 의류부착 악세서리, 가전제품 부속품, 사은품 등)</li>
-                                                <li>기타, 상품의 교환, 환불 및 상품 결함 등의 보상은 소비자분쟁해결기준(공정거래위원회 고시)에 의함</li>
-                                                <li>A/S 문의는 제조사로 먼저 문의 시 빠르게 처리 가능하며, 이마트/트레이더스 매장 상품에 한해 점포의고객만족센터를방문하시면 A/S 접수 가능</li>
-                                                <li>(영수증, 고객주문서 등 증빙서류 지참) / 자세한 문의는 하단 고객센터 번호로 문의</li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                            <script>
+                                function order() {
+                                    window.location = "../order/order.html";
+                                }
+
+                                function mbCart() {
+                                    window.location = "../member/mb_cart.html";
+                                }
+                            </script>
+
+                            <div class="proTxt_bottom">
+                                <ul>
+                                    <li>총금액</li>
+                                    <li><span class="total_price">1,400,000</span>원</li>
+                                </ul>
+
+                                <div class="buy_button">
+                                    <div class="cart_btn cursor_p t_center" onclick="mbCart()">장바구니</a></div>
+                                    <div class="buy_btn cursor_p t_center" onclick="order()">구매하기</a></div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </section>
-        </section>
 
-        <!--footer {-->
-            <footer class="katana_bg_color">
-                <!--ft_top {-->
-                <div class="ft_top">
-                    <div class="dw_1400px over_hidden ft_top_wrap">
-                        <ul class="over_hidden t_center">
-                            <li class="col-xs-4">
-                                <a href="#">
-                                    <img class="mr10px" src="../images/customer_icon.png" alt="customer_icon">
-                                    <span class="fw_bold">고객센터</span>
-                                </a>
-                            </li>
-                            
-                            <li class="col-xs-4">
-                                <a href="#">
-                                    <img class="mr10px" src="../images/way_icon.png" alt="way_icon">
-                                    <span class="fw_bold">오시는 길</span>
-                                </a>
-                            </li>
-                            
-                            <li class="col-xs-4">
-                                <a href="#">
-                                    <img class="mr10px" src="../images/as_icon.png" alt="as_icon">
-                                    <span class="fw_bold">A/S 센터</span>
-                                </a>
-                            </li>
+                <section class="pro_tab">
+                    <div class="dw_1400px over_hidden">
+                        <div class="info_tab over_hidden">
+                            <button class="tablinks f25 border_active" tab_name="tab1">상품정보</button>
+                            <button class="tablinks f25" tab_name="tab2">배송정보</button>
+                            <button class="tablinks f25" tab_name="tab3">교환정보</button>
+                        </div>
+                
+                        <div class="tabcontent tab_active over_hidden detailPage" id="tab1">
+                            <img class="w100 w_img" src="../images/w_page_Hi-Fi 9L.jpg" alt="katana_detai_view">
+                            <img class="w100 m_img" src="../images/m_page_Hi-Fi 9L.jpg" alt="katana_detai_view">
+                        </div>
+
+                        <div class="tabcontent over_hidden" id="tab2">
+                            <div class="p_delivery">
+                                <h3 class="fw_bold mb20px">배송 안내</h3>
+                                <table class="w100 f14">
+                                    <tbody>
+                                        <tr>
+                                            <th class="pd1per">배송유형</th>
+                                            <th>내용</th>
+                                            <th>배송비</th>
+                                        </tr>
+                                    </tbody>
+                                    
+                                    <tbody>
+                                        <tr>
+                                            <th class="pd1per">택배배송</th>
+                                            <td class="t_left">
+                                                <div class="d_info">
+                                                    <ul class="mb3">
+                                                        <li><strong class="fw_bold">업체 및 산지에서 택배로 배송</strong></li>
+                                                        <li>일요일/공휴일 포함 시 추가 배송기일 소요</li>
+                                                        <li>설치 상품의 경우 업체에서 사전연락</li>
+                                                        <li>주문제작 상품 및 상품 재고상황, 택배사 사정에 의해 배송 지연 될 수 있음</li>
+                                                        <li>희망발송일 등 고객 별도 요청에 의해 배송기일과 배송비 변경될 수 있음</li>
+                                                        <li>도서산간 지역일 경우에는 배송비가 추가로 발생할 수 있습니다.</li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+
+                                            <td class="t_left">
+                                                <div class="d_info td_p">상품상세 상단 배송비 참조</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                
+                        <div class="tabcontent over_hidden" id="tab3">
+                            <div class="p_return_info">
+                                <h3 class="fw_bold mb20px">교환 및 반품 안내</h3>
+                                <table class="w100 f14">
+                                    <tbody>
+                                        <tr>
+                                            <th class="pd1per">교환/반품/신청기간</th>
+                                            <td class="t_left">
+                                                <ul>
+                                                    <li>교환/취소/반품/교환/환불은 배송 완료 후 7일 이내에 가능합니다.</li>
+                                                    <li>고객님이 받으신 상품의 내용이 표시 광고 및 계약 내용과 다른 경우 상품을 수령하신 날로부터 7일 이내가능합니다.</li><li>
+                                                </li></ul>
+                                            </td>
+                                        </tr>
+        
+                                        <tr>
+                                            <th class="pd1per">교환/반품 회수(배송) 비용</th>
+                                            <td class="t_left">
+                                                <ul>
+                                                    <li>상품의 불량/하자 및 표시광고 및 계약 내용과 다른 경우 해당 상품 회수(배송)비용은 무료이나,</li>
+                                                    <li>고객님의 단순변심 및 색상/사이즈 불만에 관련된 교환/반품의 경우 택배비는 고객님 부담입니다.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <th class="pd1per">교환/반품 불가 안내</th>
+                                            <td class="t_left">
+                                                <ul class="p_info_detail">
+                                                    <li>고객님이 상품 포장을 개봉하여 사용 또는 설치 완료되어 상품의 가치가 훼손된 경우 (단, 내용 확인을 위한 포장개봉의경우는 예외)</li>
+                                                    <li>고객님의 단순변심으로 인한 교환/반품 신청이 상품 수령한 날로부터 7일이 경과한 경우</li>
+                                                    <li>고객님의 사용 또는 일부 소비에 의해 상품의 가치가 훼손된 경우</li>
+                                                    <li>시간 경과에 따라 상품 등의 가치가 현저히 감소하여 재판매가 불가능한 경우</li>
+                                                    <li>복제가 가능한 재화 등의 포장을 훼손한 경우(DVD, CD, 도서 등 복제 가능한 상품)</li>
+                                                    <li>설치상품으로 고객님이 이상 여부를 확인한 후 설치가 완료된 상품의 경우(가전, 가구, 헬스기구 등)</li>
+                                                    <li>고객님의 요청에 따라 개별적으로 주문제작되는 상품으로 재판매가 불가능한 경우(이니셜 표시상품, 사이즈맞춤상품 등</li>
+                                                    <li>구매한 상품의 구성품이 누락된 경우(화장품 세트, 의류부착 악세서리, 가전제품 부속품, 사은품 등)</li>
+                                                    <li>기타, 상품의 교환, 환불 및 상품 결함 등의 보상은 소비자분쟁해결기준(공정거래위원회 고시)에 의함</li>
+                                                    <li>A/S 문의는 제조사로 먼저 문의 시 빠르게 처리 가능하며, 이마트/트레이더스 매장 상품에 한해 점포의고객만족센터를방문하시면 A/S 접수 가능</li>
+                                                    <li>(영수증, 고객주문서 등 증빙서류 지참) / 자세한 문의는 하단 고객센터 번호로 문의</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--footer {-->
+                <footer class="katana_bg_color">
+                    <!--ft_top {-->
+                    <div class="ft_top">
+                        <div class="dw_1400px over_hidden ft_top_wrap">
+                            <ul class="over_hidden t_center">
+                                <li class="col-xs-4">
+                                    <a href="#">
+                                        <img class="mr10px" src="../images/customer_icon.png" alt="customer_icon">
+                                        <span class="fw_bold">고객센터</span>
+                                    </a>
+                                </li>
+                                
+                                <li class="col-xs-4">
+                                    <a href="#">
+                                        <img class="mr10px" src="../images/way_icon.png" alt="way_icon">
+                                        <span class="fw_bold">오시는 길</span>
+                                    </a>
+                                </li>
+                                
+                                <li class="col-xs-4">
+                                    <a href="#">
+                                        <img class="mr10px" src="../images/as_icon.png" alt="as_icon">
+                                        <span class="fw_bold">A/S 센터</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--} ft_top-->
+                    
+                    <!--ft_middle {-->
+                    <div class="ft_middle dw_1400px">
+                        <ul class="ftm_top mb10px">
+                            <li><strong class="fw_bold">(주)카타나골프</strong>서울특별시 중구 소공로35 롯데캐슬 아이리스 3층 315호</li>
+                            <li>대표: 김홍득 Tel: 02-501-6955-8255</li>
+                            <li>Fax: 02-538-0116</li>
+                            <li>A/S센터: 02-737-4444</li>
+                        </ul>
+        
+                        <p>본 사이트의 상품이미지 저작권은 카타나골프에 있으며, 내용의 무단복제를 금합니다.</p>
+                        
+                        <p class="ftm_middle"><strong>KATANA GOLF Co.,LTD</strong> &nbsp;&nbsp;All Rights Reserved.</p>
+        
+                        <ul class="ftm_bottom">
+                            <li><a href="#">통합회원</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보 처리방침</a></li>
+                            <li><a href="#">사업자 정보 확인</a></li>
+                            <li><a href="#">공지사항 FAQ</a></li>
                         </ul>
                     </div>
-                </div>
-                <!--} ft_top-->
-                
-                <!--ft_middle {-->
-                <div class="ft_middle dw_1400px">
-                    <ul class="ftm_top mb10px">
-                        <li><strong class="fw_bold">(주)카타나골프</strong>서울특별시 중구 소공로35 롯데캐슬 아이리스 3층 315호</li>
-                        <li>대표: 김홍득 Tel: 02-501-6955-8255</li>
-                        <li>Fax: 02-538-0116</li>
-                        <li>A/S센터: 02-737-4444</li>
-                    </ul>
-    
-                    <p>본 사이트의 상품이미지 저작권은 카타나골프에 있으며, 내용의 무단복제를 금합니다.</p>
-                    
-                    <p class="ftm_middle"><strong>KATANA GOLF Co.,LTD</strong> &nbsp;&nbsp;All Rights Reserved.</p>
-    
-                    <ul class="ftm_bottom">
-                        <li><a href="#">통합회원</a></li>
-                        <li><a href="#">이용약관</a></li>
-                        <li><a href="#">개인정보 처리방침</a></li>
-                        <li><a href="#">사업자 정보 확인</a></li>
-                        <li><a href="#">공지사항 FAQ</a></li>
-                    </ul>
-                </div>
-                <!--} ft_middle-->
-            </footer>
-            <!--} footer-->
+                    <!--} ft_middle-->
+                </footer>
+                <!--} footer-->
+            </section>
+            <!--} product_view-->
         </div>
         <!--} wrap-->
     </body>
-    </html>
+</html>

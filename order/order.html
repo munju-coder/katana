@@ -39,6 +39,21 @@
             $('.header_middle').css('right','-100%');
             $('.menu_bg').toggle();
         });
+
+        /**
+        * @brief menu click event
+        */
+        $('#charge_cash_radio').click( function(){
+            $('.card_info').hide();
+            $('.cash_info').show();
+            pay_type = "무통장";
+        });
+
+        $('#charge_card_radio').click( function(){
+            $('.card_info').show();
+            $('.cash_info').hide();
+            pay_type = "카드";
+        });
     });
 </script>
 <body>
@@ -91,7 +106,7 @@
                 <div class="header_right over_hidden">
                    <a href="#"><img id="w_search_icon" src="../images/M_search_icon.png" alt="search icon"></a>
                    <a href="#"><img id="M_member_icon" src="../images/M_member_icon.png" alt="Mobile member icon"></a>
-                   <a class="web_txt" href="#">로그인</a>
+                   <a class="web_txt" href="../login/login.html">로그인</a>
                    <!--로그인 후에는  회원가입 삭제 -> #M_member_icon 넣어주세요 -->
                    <!-- <a class="web_txt" href="#">로그아웃</a> -->
                    <a class="web_txt" href="#">회원가입</a>
@@ -217,7 +232,9 @@
                                 .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .address_input::after { content: ''; display: block; overflow: hidden; clear: both; }
                                 .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .address_input input:first-child { margin-right: 10px; }
                                 
-
+                                .wrap .order_contents .order_wrap .mb_middle .charge_box .charge_select .pay_type { float: left; width: 50%;  }
+                                .wrap .order_contents .order_wrap .mb_middle .charge_box .charge_select::after { content: ''; display: block; overflow: hidden; clear: both; }
+                                .wrap .order_contents .order_wrap .mb_middle .charge_box .cash_info { display: none; }
                             </style>
                             <div class="mb_content mb20px">
                                 <div class="mb_subject">연락처</div>
@@ -285,29 +302,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <style>
-                                .wrap .order_contents .order_wrap .mb_middle .charge_box .charge_select .pay_type { float: left; width: 50%;  }
-                                .wrap .order_contents .order_wrap .mb_middle .charge_box .charge_select::after { content: ''; display: block; overflow: hidden; clear: both; }
-                                .wrap .order_contents .order_wrap .mb_middle .charge_box .charge_info .cash_info { display: none; }
-
-                            </style>
-                            <script>
-                                $(document).ready( function(){
-                                     //결제수단 선택
-                                    $('#charge_cash_radio').click( function(){
-                                        $('.card_info').hide();
-                                        $('.cash_info').show();
-                                        pay_type = "무통장";
-                                    });
-
-                                    $('#charge_card_radio').click( function(){
-                                        $('.card_info').show();
-                                        $('.cash_info').hide();
-                                        pay_type = "카드";
-                                    });
-                                });
-                            </script>
         
                             <!--caharge_info {-->
                             <div class="charge_info card_info t_left mt20px">

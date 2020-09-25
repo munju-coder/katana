@@ -99,6 +99,7 @@ a:hover,a:active,a:visited ,a:link { color: #333; text-decoration: none; }
 .wrap .product_view .pro_txt .proTxt_bottom .buy_button::after { content: ''; display: block; overflow: hidden; clear: both; }
 .wrap .product_view .pro_txt .proTxt_bottom .buy_button .cart_btn { background-color: #4c4c4c; margin-right: 10px; }
 .wrap .product_view .pro_txt .proTxt_bottom .buy_button .buy_btn { background-color: #1f704f; }
+/* .wrap .product_view .pro_txt .proTxt_bottom .buy_button a { color: white;} */
 
 .wrap .product_view .pro_txt .proTxt_bottom ul {  margin-bottom: 10%; }
 .wrap .product_view .pro_txt .proTxt_bottom ul li { float: left; font-size: 23px; font-weight: 600; }
@@ -209,6 +210,8 @@ a:hover,a:active,a:visited ,a:link { color: #333; text-decoration: none; }
 .wrap .login_contents .login_box .lb_bottom .lbmb_check { margin: 20px auto; }
 .wrap .login_contents .login_box .logbox_btn input { border: none; background-color: #adadad; color: #ffffff; padding: 15px; }
 .wrap .login_contents .login_box .lb_bottom input:nth-last-of-type(2) { border-right: 1px solid #ffffff; }
+
+.wrap .order_contents .order_wrap .mb_middle .charge_box .ci_box { margin-top: 20px; }
 
 /*register_form(회원정보 수정, 회원가입)*/
 .wrap .member_contents .member_wrap { margin-top: 20px; margin-bottom: 20px; }
