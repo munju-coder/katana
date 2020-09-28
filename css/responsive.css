@@ -13,6 +13,9 @@
 .wrap .contents .companyArea .cA_left { width: 30%; }
 .wrap .contents .companyArea section { width: 65%; padding-top: 10%; }
 
+ /*order*/
+ .wrap .order_contents .order_wrap .mb_middle .charge_box .ci_box .cib_subject input { width: 20%; }
+
 }
 
 @media(max-width:1200px) {
@@ -70,6 +73,31 @@
 
 /*asArea*/
 .wrap .contents .asArea .asA_middle .asAm_txt ul li { width: 100%; margin-bottom: 10px; }
+
+/*order*/
+.wrap .order_contents .mb_middle .bill { border-top: 1px solid #c3c3c3; border-bottom: 1px solid #c3c3c3; padding: 10px; margin-top: 30px; }
+.wrap .order_contents .mb_middle .bill .calc .total_sum ul li:first-child { margin-bottom: 0; }
+.wrap .order_contents .mb_middle .bill .calc ul li { margin-bottom: 10px; }
+.wrap .order_contents .mb_middle .bill .calc ul li:last-child { margin-bottom: 0; }
+.wrap .order_contents .mb_middle .bill .calc div  { float: none; width: 100%; }
+.wrap .order_contents .mb_middle .bill .calc .sum_box { border: none; padding: 0; }
+.wrap .order_contents .mb_middle .bill .calc .sum_icon { display: none; padding-top: 0; }
+
+.wrap .order_contents .order_wrap .o_table_wrap .o_table tr .ot_pro_box .ot_pro img { width: 30%; margin-right: 10px; }
+.wrap .order_contents .order_wrap .o_table_wrap .o_table tr .ot_pro_box .ot_pro span { width: 60%; margin-top: 0; }
+.wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .address_input input { width: 100%; }
+.wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .address_input input:first-child { margin-bottom: 10px; }
+.wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .mb_input #mb_zip { width: 100%; }
+.wrap .order_contents .order_wrap .mb_middle .charge_box .ci_box .cib_subject input {margin-right: 0; }
+
+/*order_result*/
+.wrap .result_contents .result_middle .rm_top .rmt_top p { width: 40%;  }
+.wrap .result_contents .result_middle .rmt_middle ul li { text-align: center; }
+.wrap .result_contents .result_middle .rmt_middle ul li a img { width: 50%; text-align: center; }
+.wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li,.wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li:last-child { width: 100%; margin-bottom: 20px; }
+.wrap .result_contents .result_middle .rm_middle h4 { margin-bottom: 20px; }
+.wrap .result_contents .result_middle .rm_middle .rmm_middle .rm_box .rmb_left,.wrap .result_contents .result_middle .rm_middle .rmm_middle .rm_box .rmb_right { float: none; width: 100%; }
+.wrap .result_contents .result_middle .rm_middle .rmm_middle .rm_box .rmb_right { margin-top: 20px; }
 
 }
 
@@ -158,6 +186,20 @@
 .wrap .member_contents .member_wrap .mb_content .mb_subject { width: 100%; }
 .wrap .member_contents .member_wrap .add_info .address_box { margin-bottom: 10px; }
 .wrap .member_wrap .mb_middle .regi_btn { margin: 50px 0; }
+
+/*order*/
+.wrap .order_contents .order_wrap .mb_middle .charge_box .ci_box .cib_subject select { width: 60%; }
+.wrap .member_contents .order_wrap .mb_content .mb_subject { margin-bottom: 10px; }
+.wrap .order_contents .order_wrap .o_table_wrap .o_table tr .ot_pro_box .ot_pro { padding: 0; }
+
+.wrap .order_contents .order_wrap .order_btn { margin: 50px 0; }
+.wrap .order_contents .order_wrap .order_btn input { font-size: 12px; }
+
+/*order_result*/
+.wrap .result_contents .result_middle .rm_top .rmt_top p { width: 50%; }
+.wrap .result_contents .result_middle .rmt_middle ul li { float: none; width: 100%; text-align: left; }
+.wrap .result_contents .result_middle .rmt_middle ul li:nth-child(2) { display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+.wrap .result_contents .result_middle .rmt_middle ul li a img { width: 100%; }
 }
 @media(max-width:500px) {
     
@@ -232,11 +274,27 @@
 .wrap .login_contents .login_box .lb_bottom .lbmb_check { margin: 10px auto; font-size: 11px; }
 
 /*register_form(회원정보 수정, 회원가입)*/
-.wrap .member_contents .mb_top h2 { font-size: 24px; }
+.wrap .member_contents .mb_top h2 { font-size: 20px; }
 .wrap .member_contents .member_wrap .basic_info h4 { font-size: 17px; }
 .wrap .member_contents .member_wrap .mb_content .mb_input input { font-size: 14px; }
 .wrap .member_contents .member_wrap .add_info .mb_content .mb_input #r_zip_btn input { width: 60%; }
 .wrap .member_contents .member_wrap .mb_content .mb_subject { font-size: 14px; }
 .wrap .member_wrap .mb_middle .regi_btn button { font-size: 14px; }
 .wrap .zip_btn a { padding: 5px 20px; }
+
+/*order*/
+.wrap .order_contents .mb_middle .bill .calc ul li { font-weight: bold; }
+.wrap .order_contents .order_wrap .mb_middle h4 { font-size: 18px;/*  font-weight: bold; */ }
+.wrap .order_contents .order_wrap .mb_middle h4 span { font-size: 11px; }
+.wrap .order_contents .order_wrap .mb_middle .charge_box .ci_box .cib_subject input:not(.o_name_input) { width: 60px; }
+
+/*order_result*/
+.wrap .result_contents .result_middle .rm_top .rmt_top { font-size: 12px; }
+.wrap .result_contents .result_middle .rm_top .rmt_top p { float: none; width: 100%; margin-bottom: 10px; }
+.wrap .result_contents .result_middle .rm_top .rmt_top p:last-child { margin-bottom: 0; }
+.wrap .result_contents .result_middle .rm_middle h4 { font-size: 16px; }
+.wrap .result_contents .result_middle .rm_middle .rmm_middle .rm_box .rmb_right ul li p,.wrap .result_contents .result_middle .rm_middle .rmm_middle .rm_box .rmb_right ul li span { width: 50%; font-size: 16px; }
+.wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li p,.wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li span { float: none; }
+.wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li p { margin-bottom: 10px; }
+.wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li, .wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li:last-child { margin-bottom: 10px; }
 } 

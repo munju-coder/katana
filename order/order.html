@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../js/jquery.easing.1.3.js"></script>
     <script src="../js/jquery.transit.min.js"></script>
+    <script src="../js/COMMON_geo.js"></script>
     <!--goolge webfont-->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!--font Awesome-->
@@ -54,7 +55,11 @@
             $('.cash_info').hide();
             pay_type = "카드";
         });
+
+        
     });
+
+       
 </script>
 <body>
     <!--wrap {-->
@@ -144,26 +149,26 @@
                         <table class="o_table w100">
                             <thead>
                                 <tr>
-                                    <th class="t_center">상품명</th>
-                                    <th class="t_center">수량</th>
-                                    <th class="t_center">주문금액</th>
+                                    <th class="w60 t_center">상품명</th>
+                                    <th class="w20 t_center">수량</th>
+                                    <th class="w20 t_center">주문금액</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
-                                    <td class="ot_pro_box">
+                                    <td class="ot_pro_box w60">
                                         <div class="ot_pro">
                                             <img src="../images/pr_img1.png" alt="product image">
                                             <span class="">SWORD Hi-Fi 9L SWORD Hi-Fi 9L SWORD Hi-Fi SWORD Hi-Fi 9LSWOR</span>
                                         </div>
                                     </td>
                                     
-                                    <td class="t_center">
+                                    <td class="t_center w20">
                                         <span>1</span>
                                     </td>
 
-                                    <td class="t_center">
+                                    <td class="t_center w20">
                                         <div><span>1,000,000</span>원</div>
                                     </td>
                                 </tr>
@@ -208,34 +213,7 @@
                                     <input type="text" name="r_name" id="r_name" class="w100" value="최고관리자" placeholder="받는사람 이름">
                                 </div>
                             </div>
-
-                            <style>
-                                /*order*/
-                                .wrap .order_contents .order_wrap { margin-top: 3%; }
-                                .wrap .order_contents .o_table  { border-collapse:collapse; }
-                                .wrap .order_contents .o_table td { border-bottom: 1px solid rgb(90, 90, 90); padding: 10px 5px; vertical-align: middle; }
-                                .wrap .order_contents .o_table td img { width: 100px; }
-                                .wrap .order_contents .o_table th { border-top: 1px solid rgb(90, 90, 90); border-bottom: 1px solid rgb(90, 90, 90); padding: 10px 5px; }
-                                .wrap .order_contents .order_wrap .o_table_wrap { margin-bottom: 50px; }
-                                .wrap .order_contents .order_wrap .o_table_wrap .o_table tr .ot_pro_box .ot_pro { padding: 20px; }
-                                .wrap .order_contents .order_wrap .o_table_wrap .o_table tr .ot_pro_box .ot_pro img { float: left; margin-right: 32px; }
-                                .wrap .order_contents .order_wrap .o_table_wrap .o_table tr .ot_pro_box .ot_pro span { float: left; margin-top: 50px; }
-                                .wrap .order_contents .order_wrap .o_table_wrap .o_table tr .ot_pro_box .ot_pro::after { content: ''; display: block; overflow: hidden; clear: both; }
-                                .wrap .order_contents .order_wrap .mb_middle .basic_info,.wrap .order_contents .order_wrap .mb_middle .deliver_info ,.wrap .order_contents .order_wrap .mb_middle .charge_box { margin-bottom: 6%; }
-                                .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .mb_input #mb_zip { width: 50%; float: left; margin-right: 10px; }
-                                .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .mb_input .zip_btn { float: left; }
-                                .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .mb_input::after { content: ''; display: block; overflow: hidden; clear: both; } 
-                                .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .mb_input .zip_btn button { border: none; color: white; padding: 5px 10px;  background-color: #868688; }
-                                .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .mb_input .zip_btn button:first-child { margin-right: 10px; }
-
-                                .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .address_input input { float: left; width: 49%; }
-                                .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .address_input::after { content: ''; display: block; overflow: hidden; clear: both; }
-                                .wrap .order_contents .order_wrap .mb_middle .deliver_info .mb_content .address_input input:first-child { margin-right: 10px; }
-                                
-                                .wrap .order_contents .order_wrap .mb_middle .charge_box .charge_select .pay_type { float: left; width: 50%;  }
-                                .wrap .order_contents .order_wrap .mb_middle .charge_box .charge_select::after { content: ''; display: block; overflow: hidden; clear: both; }
-                                .wrap .order_contents .order_wrap .mb_middle .charge_box .cash_info { display: none; }
-                            </style>
+                            
                             <div class="mb_content mb20px">
                                 <div class="mb_subject">연락처</div>
 
@@ -276,6 +254,49 @@
                             </div>
                         </div>
 
+                        <div class="bill t_center mtb50px">
+                            <div class="calc">
+                                <div class="pro_sum w25">
+                                    <ul class="over_hidden sum_box">
+                                        <li class="fw_bold bill_color t_right"><span id="pd_price">25,000</span>원</li>
+                                        <li class="word_break t_left">상품 금액</li>
+                                    </ul>
+                                </div>
+
+                                <div class="sum_icon mt30px w5"><img src="http://recovershop.co.kr/template/recover_flower/template/_html/images/plus_btn.png" alt="plus_icon"></div>
+
+                                <div class="deli_sum w15">
+                                    <ul class="over_hidden sum_box">
+                                        <li class="fw_bold bill_color t_right"><span id="total_delivery_price">3,000</span>원</li>
+                                        <li class="t_left">배송비</li>
+                                        <input type="hidden" id="delivery_price_chk" value="30000">
+                                        <input type="hidden" id="delivery_price" value="3000">
+                                        <input type="hidden" id="addDeliveryPrice" value="3000">
+                                    </ul>
+                                </div>
+
+                                <div class="sum_icon mt25px w5"><img src="http://recovershop.co.kr/template/recover_flower/template/_html/images/minus_btn.png" alt="minus_icon"></div>
+
+                                <!-- <div class="sale_sum w20">
+                                    <ul class="over_hidden sum_box">
+                                        <li class="fw_bold bill_color t_right"><span id="total_use_point">4,000</span>P</li>
+                                        <li class="word_break t_left">사용 포인트</li>
+                                    </ul>
+                                </div>
+
+                                <div class="sum_icon mt30px w5"><img src="http://recovershop.co.kr/template/recover_flower/template/_html/images/equal_btn.png" alt="equal_icon"></div> -->
+
+                                <div class="total_sum w25">
+                                    <ul class="over_hidden sum_box">
+                                        <li class="fw_bold bill_color t_right"><span id="total_price">24,000</span>원</li>
+                                        <li class="word_break t_left">결제 금액</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <p style="font-size: 12px; color: red; text-align: right; margin-top: 10px;">※도서산간 지역일 경우에는 배송비가 추가됩니다.</p> -->
+
+                        </div>
+
                         <!--charge_box {-->
                         <div class="charge_box mtb3per">
                             <h4 class="f20 mtb10px pb10px bor_bottom">결제수단&nbsp;&nbsp;<span class="f12 word_break">결제수단을 선택하여 지불 정보를 입력해주세요.</span></h4>
@@ -298,20 +319,170 @@
                                     <div class="cib_subject mb10px f14">예금주명 주식회사 예원엠앤디</div>
                                     <div class="cib_subject f14">
                                         <span class="mr10px">입금자명</span> 
-                                        <input type="text" class="mr10px" name="b_name" id="b_name">
+                                        <input type="text" class="o_name_input mr10px" name="b_name" id="b_name">
                                     </div>
                                 </div>
                             </div>
+
+                            <script>
+                                /**
+                                * @brief 카드 input 자동커서이동 추가
+                                */
+                                $(".c_input").keyup (function () {
+                                    var inputCursor = $(this).attr("maxlength");
+                                    if (this.value.length >= inputCursor) {
+                                        $(this).next('.c_input').focus();
+                                        // return false;
+                                    }
+                                });
+
+                                /**
+                                * @brief 유효기간 input 자동커서이동 추가
+                                */
+                                $(".period_input").keyup (function () {
+                                    var inputCursor = $(this).attr("maxlength");
+                                    if (this.value.length >= inputCursor) {
+                                        $(this).next('.period_input').focus();
+                                        return false;
+                                    }
+                                });
+
+                                /**
+                                * @brief input number type maxlength 추가
+                                */
+                                function maxLengthCheck(object) {
+                                    if(object.value.length > object.maxLength) {
+                                        object.value = object.value.slice(0, object.maxLength);
+                                    }
+                                }
+
+                                 //form check
+                                //pay_type
+                                var pay_type = "카드";
+                                var use_max_point = 0;
+                                var total_price = 0;
+                                var order_chk = false;
+
+                                $(".member_form").submit(function(e){
+                                    e.preventDefault();
+                                    var formObject = $(this).serializeObject();
+                                    formObject["api_key"] = API_KEY;
+                                    formObject['mb_id'] = MB_ID;
+
+                                    var pd_seq = [];
+                                    var pd_price = [];
+                                    var use_point = [];
+
+                                    $("input[name=pd_seq]").each(function(i){
+                                        pd_seq[i] = $(this).val();
+                                        pd_price[i] = $(this).attr("pd_price");
+                                        use_point[i] = parseInt(COMMON.form.str_num($(".each_use_point").eq(i).val()));
+                                    });
+
+
+                                    formObject['pd_seq'] = pd_seq;
+                                    formObject['pd_price'] = pd_price;
+                                    formObject['delivery_price'] = parseInt(COMMON.form.str_num($("#total_delivery_price").text()));
+
+                                    if(formObject['o_name'] == "")
+                                    {
+                                        alert("주문하시는분을 입력하세요.");
+                                        return false;
+                                    }
+
+                                    if(formObject['o_tel'] == "")
+                                    {
+                                        alert("주문하시는분 휴대폰번호를 입력하세요.");
+                                        return false;
+                                    }
+
+                                    if(formObject['o_email'] == "")
+                                    {
+                                        alert("주문하시는분 이메일 주소를 입력하세요.");
+                                        return false;
+                                    }
+
+                                    if(formObject['r_name'] == "")
+                                    {
+                                        alert("받으시는분 이름을 입력하세요.");
+                                        return false;
+                                    }
+
+                                    if(formObject['r_tel'] == "")
+                                    {
+                                        alert("연락처1을 입력하세요.");
+                                        return false;
+                                    }
+
+                                    if(formObject['r_mobile'] == "")
+                                    {
+                                        alert("연락처2를 입력하세요.");
+                                        return false;
+                                    }
+
+                                    if(formObject['r_addr_1'] == "")
+                                    {
+                                        alert("기본주소를 입력하세요.");
+                                        return false;
+                                    }
+
+                                    if(formObject['r_addr_2'] == "")
+                                    {
+                                        alert("상세주소를 입력하세요.");
+                                        return false;
+                                    }
+
+                                    if(formObject['r_zip'] == "")
+                                    {
+                                        alert("우편번호를 입력하세요.");
+                                        return false;
+                                    }
+
+                                    //pay_type init
+                                    formObject['pay_type'] = pay_type;
+
+                                    if(pay_type == "무통장")
+                                    {
+                                        if(formObject['b_name'] == "")
+                                        {
+                                            alert("입금자명을 입력하세요.");
+                                            return false;
+                                        }
+                                    }
+                                    else if(pay_type == "카드")
+                                    {
+                                        if(formObject['card_num_1'] == "" && formObject['card_num_2'] == "" && formObject['card_num_3'] == "" && formObject['card_num_4'] == "")
+                                        {
+                                            alert("카드번호를 입력하세요.");
+                                            return false;
+                                        }
+
+                                        if(formObject['card_num_mm'] == "" && formObject['card_num_yy'])
+                                        {
+                                            alert("유효기간을 입력하세요.");
+                                            return false;
+                                        }
+                                        
+                                        if(formObject['install_period'] == "")
+                                        {
+                                            alert("할부기간을 선택하세요.");
+                                            return false;
+                                        }
+                                    }
+
+
+                                });
+                            </script>
         
                             <!--caharge_info {-->
                             <div class="charge_info card_info t_left mt20px">
                                 <div class="ci_box">
                                     <div class="cib_subject mb10px">
                                         <span class="mr10px f14">카드번호</span>
-                                        <input type="number" numberonly="" class="mr10px c_input" name="card_num_1" id="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="return COMMON.form.removeString(event);">
-                                        <input type="number" numberonly="" class="mr10px c_input" name="card_num_2" id="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="return COMMON.form.removeString(event);">
-                                        <input type="number" numberonly="" class="mr10px c_input" name="card_num_3" id="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="return COMMON.form.removeString(event);">
-                                        <input type="number" numberonly="" class="mr10px c_input" name="card_num_4" id="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="return COMMON.form.removeString(event);">
+                                        <input type="number" numberonly class="mr10px c_input" name="card_num_1" id="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="return COMMON.form.removeString(event);">
+                                        <input type="number" numberonly class="mr10px c_input" name="card_num_2" id="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="return COMMON.form.removeString(event);">
+                                        <input type="number" numberonly class="mr10px c_input" name="card_num_3" id="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="return COMMON.form.removeString(event);">
+                                        <input type="number" numberonly class="mr10px c_input" name="card_num_4" id="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="return COMMON.form.removeString(event);">
                                     </div>
         
                                     <div class="cib_subject mb10px">
@@ -322,7 +493,7 @@
 
                                     <div class="cib_subject">
                                         <span class="mr10px f14">할부기간</span>
-                                        <select name="install_period" id="">
+                                        <select class="w20" name="install_period" id="">
                                             <option value="">선택하세요.</option>
                                             <option value="00">일시불</option>
                                             <option value="01">1개월</option>
@@ -346,6 +517,11 @@
                         <!--} charge_box-->
                     </div>
                     <!--} mb_middle-->
+
+                    <div class="order_btn t_center">
+                        <input type="submit" value="결제" class="mr10px">
+                        <input type="button" value="취소" class = "btn_cancel_jq">
+                    </div>
                 </div>
                 <!--} order_wrap-->
             </form>
