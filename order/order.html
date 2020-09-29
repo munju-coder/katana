@@ -116,7 +116,7 @@
                    <!-- <a class="web_txt" href="#">로그아웃</a> -->
                    <a class="web_txt" href="#">회원가입</a>
                    <a href="#"><img id="M_cart_icon" src="../images/M_cart_icon.png" alt="Mobile cart icon"></a>
-                   <a class="web_txt" href="#">장바구니</a>
+                   <a class="web_txt" href="../member/mb_cart.html">장바구니</a>
                    <a href="#"><img id= "M_menu_icon" src="../images/M_menu_icon.png" alt="Mobile menu icon"></a>
                 </div>
             </div>
@@ -155,12 +155,18 @@
                                 </tr>
                             </thead>
 
+                            <script>
+                                function proView() {
+                                    window.location = "../product/product_view.html";
+                                }
+                            </script>
+
                             <tbody>
                                 <tr>
                                     <td class="ot_pro_box w60">
-                                        <div class="ot_pro">
+                                        <div class="ot_pro" onclick="proView()">
                                             <img src="../images/pr_img1.png" alt="product image">
-                                            <span class="">SWORD Hi-Fi 9L SWORD Hi-Fi 9L SWORD Hi-Fi SWORD Hi-Fi 9LSWOR</span>
+                                            <span>SWORD Hi-Fi 9L SWORD Hi-Fi 9L SWORD Hi-Fi SWORD Hi-Fi 9LSWOR</span>
                                         </div>
                                     </td>
                                     

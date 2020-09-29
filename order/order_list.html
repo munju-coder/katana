@@ -40,15 +40,25 @@
             $('.menu_bg').toggle();
         });
 
+        /**
+        * @brief menu click event
+        */
+        $('#charge_cash_radio').click( function(){
+            $('.card_info').hide();
+            $('.cash_info').show();
+            pay_type = "무통장";
+        });
+
+        $('#charge_card_radio').click( function(){
+            $('.card_info').show();
+            $('.cash_info').hide();
+            pay_type = "카드";
+        });
     });
 </script>
 <script>
-    function regiForm() {
-        window.location = "register_form.html";
-    }
-
-    function orderList() {
-        window.location = "../order/order_list.html";
+    function orderResult() {
+        window.location = "../order/order_result.html";
     }
 </script>
 <body>
@@ -126,95 +136,52 @@
         </header>
         <!--} header-->
 
-        <!--member_contents {-->
+        <!--result_contents {-->
         <section class="member_contents order_contents result_contents">
             <div class="mb_top">
-                <div class="dw_1400px"><h2>마이페이지</h2></div>
+                <div class="dw_1400px">
+                    <h2>주문내역</h2>
+                    <p class="f12 mt10px">주문번호를 누르시면 상세내역을 확인하실 수 있습니다.</p>
+                </div>
             </div>
 
-            <div class="mb_middle dw_1400px">
-                <div class="mbm_top">
-                    <ul class="f12">
-                        <li class="mb_outing">회원탈퇴</li>
-                        <li class="mb_modify" onclick="regiForm()">정보수정</li>
-                    </ul>
-                </div>
-
-                <div class="mbm_middle">
-                    <h4>나의 주문처리 현황(최근<span>1개월</span>기준)</h4>
-                    <div class="mbmm_top over_hidden">
-                        <ul class="col-xs-6 col-sm-3">
-                            <li>입금전</li>
-                            <li class="fw_bold">0</li>
-                        </ul>
-
-                        <ul class="col-xs-6 col-sm-3">
-                            <li>배송준비중</li>
-                            <li class="fw_bold">0</li>
-                        </ul>
-
-                        <ul class="col-xs-6 col-sm-3">
-                            <li>배송중</li>
-                            <li class="fw_bold">0</li>
-                        </ul>
-
-                        <ul class="col-xs-6 col-sm-3">
-                            <li>배송완료</li>
-                            <li class="fw_bold">0</li>
-                        </ul>
+            <div class="result_middle dw_1400px order_wrap">
+                <div class="rm_top">
+                    <div class="rmt_top w70">
+                        <p>주문날짜: <span>2020-04-14 11:43:24</span></p>
+                        <p class="word_break cursor_p" onclick="orderResult()">주문번호: <span>2020041411423806</span></p>
                     </div>
-
-                    <div class="mbmm_bottom">
+    
+                    <div class="rmt_middle">
                         <ul>
-                            <li>취소</li>
-                            <li>0</li>
-                        </ul>
-
-                        <ul>
-                            <li>교환</li>
-                            <li>0</li>
-                        </ul>
-
-                        <ul>
-                            <li>반품</li>
-                            <li>0</li>
+                            <li class="w20"><a href="../product/product_view.html"><img class="w30 " src="../images/pr_img1.png" alt="product image"></a></li>
+                            <li class="w40"><span>SWORD Hi-Fi 9L SWORD Hi-Fi 9L SWORD Hi-Fi SWORD Hi-Fi 9LSWOR</span> / <span>1</span></li>
+                            <li class="w30"><div class="mb10px">취소</div></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="mbm_bottom">
-                    <div class="mbmb_top mb10px">
-                        <h4>최근 주문 내역</h4>
-                        <div class="mb_more cursor_p" onclick="orderList()">더보기</div>
+                <div class="rm_top mt10px">
+                    <div class="rmt_top w70">
+                        <p>주문날짜: <span>2020-04-14 11:43:24</span></p>
+                        <p class="word_break cursor_p" onclick="orderResult()">주문번호: <span>2020041411423806</span></p>
                     </div>
-
-                    <table class="mb_table w100">
-                        <thead>
-                            <tr>
-                                <th class="t_center">주문번호</th>
-                                <th class="t_center">주문날짜</th>
-                                <th class="t_center">상품수</th>
-                                <th class="t_center">주문금액</th>
-                                <th class="t_center display_none">결제수단</th>
-                                <th class="t_center display_none">상태</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td class="t_center">2020041411423806</td>
-                                <td class="t_center">2020-04-14</td>
-                                <td class="t_center">1</td>
-                                <td class="t_center">79,900</td>
-                                <td class="t_center display_none">무통장</td>
-                                <td class="t_center display_none">취소</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    
+                    <div class="rmt_middle">
+                        <ul>
+                            <li class="w20"><a href="../product/product_view.html"><img class="w30 " src="../images/pr_img1.png" alt="product image"></a></li>
+                            <li class="w40"><span>SWORD Hi-Fi 9L SWORD Hi-Fi 9L SWORD Hi-Fi SWORD Hi-Fi 9LSWOR</span> / <span>1</span></li>
+                            <li class="w30"><div class="mb10px">취소</div></li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+
+            <div class="order_list_btn dw_1400px mt10px">
+                <div class="mb_delete">주문내역삭제</div>
             </div>
         </section>
-        <!--} member_contents-->
+        <!--} order_contents-->
         
         <!--footer {-->
         <footer class="katana_bg_color">

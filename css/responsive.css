@@ -13,8 +13,8 @@
 .wrap .contents .companyArea .cA_left { width: 30%; }
 .wrap .contents .companyArea section { width: 65%; padding-top: 10%; }
 
- /*order*/
- .wrap .order_contents .order_wrap .mb_middle .charge_box .ci_box .cib_subject input { width: 20%; }
+/*order*/
+.wrap .order_contents .order_wrap .mb_middle .charge_box .ci_box .cib_subject input { width: 20%; }
 
 }
 
@@ -200,6 +200,18 @@
 .wrap .result_contents .result_middle .rmt_middle ul li { float: none; width: 100%; text-align: left; }
 .wrap .result_contents .result_middle .rmt_middle ul li:nth-child(2) { display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
 .wrap .result_contents .result_middle .rmt_middle ul li a img { width: 100%; }
+
+/*my_page*/
+.wrap .member_contents .mb_middle .mbm_middle h4 { margin-top: 30px; }
+.wrap .member_contents .mb_middle .mbm_middle h4,.wrap .member_contents .mb_middle .mbm_bottom .mbmb_top h4 { font-size: 14px; }
+.wrap .member_contents .mb_middle .mbm_top ul li,.wrap .member_contents .mb_middle .mbm_bottom .mbmb_top .mb_more { padding: 7px 12px; }
+.wrap .member_contents .mb_middle .mbm_middle .mbmm_top ul { border-right: none; }
+.wrap .member_contents .mb_middle .mbm_middle .mbmm_top ul:first-child,.wrap .member_contents .mb_middle .mbm_middle .mbmm_top ul:nth-child(2) { margin-bottom: 20px; }
+.wrap .member_contents .mb_middle .mbm_middle .mbmm_bottom ul { width: 30%; }
+.wrap .member_contents .mb_middle .mbm_middle .mbmm_bottom { padding: 10px; }
+.wrap .member_contents .mb_middle .mbm_middle .mbmm_top ul li , .wrap .member_contents .mb_middle .mbm_middle .mbmm_bottom ul { font-size: 14px; }
+.wrap .member_contents .mb_middle .mbm_middle .mbmm_top ul li:last-child { font-size: 16px; }
+.wrap .member_contents .mbm_bottom .mb_table td { font-size: 12px; }
 }
 @media(max-width:500px) {
     
@@ -297,4 +309,7 @@
 .wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li p,.wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li span { float: none; }
 .wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li p { margin-bottom: 10px; }
 .wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li, .wrap .result_contents .result_middle .rm_middle .rmm_top .rm_box ul li:last-child { margin-bottom: 10px; }
+
+/*my_page*/
+.wrap .member_contents .mbm_bottom .mb_table th { font-size: 12px; }
 } 
