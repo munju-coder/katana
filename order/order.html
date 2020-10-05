@@ -61,9 +61,15 @@
 
        
 </script>
+
+<style>
+    
+</style>
 <body>
     <!--wrap {-->
     <div class="wrap">
+        <div class="modal_background" style="display: block;"></div>
+        <div class="modal_box"></div>
         <!--menu click bg call-->
         <div class="menu_bg"></div>
         <!--header {-->
@@ -235,7 +241,7 @@
                                     <input type="text" name="r_zip" id="mb_zip" class="" value="11111" placeholder="우편번호 입력하세요.">
                                     
                                     <div class="zip_btn cursor fw_600 f14" id="r_zip_btn">
-                                        <button id="mb_zip_fd" onclick="DaumPostcode()">주소찾기</button>
+                                        <button id="mb_zip_fd" onclick="addressPostcode()">주소찾기</button>
                                         <button id="delivery_change_btn">배송지 변경</button>
                                     </div>
                                 </div>
@@ -246,9 +252,9 @@
                                 </div>
 
                                 <!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
-                                <!-- <div id="layer" style="display: none; position: fixed; overflow: hidden; z-index: 1; width: 40%; left: 30%;">
-                                    <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
-                                </div> -->
+                                <div id="layer" style="display: none; position: fixed; overflow: hidden; z-index: 1; width: 40%; left: 30%;">
+                                    <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closePostcode()" alt="닫기 버튼">
+                                </div>
                             </div>
                             
                             <div class="mb_content mb10px">
@@ -283,15 +289,6 @@
 
                                 <div class="sum_icon mt25px w5"><img src="http://recovershop.co.kr/template/recover_flower/template/_html/images/minus_btn.png" alt="minus_icon"></div>
 
-                                <!-- <div class="sale_sum w20">
-                                    <ul class="over_hidden sum_box">
-                                        <li class="fw_bold bill_color t_right"><span id="total_use_point">4,000</span>P</li>
-                                        <li class="word_break t_left">사용 포인트</li>
-                                    </ul>
-                                </div>
-
-                                <div class="sum_icon mt30px w5"><img src="http://recovershop.co.kr/template/recover_flower/template/_html/images/equal_btn.png" alt="equal_icon"></div> -->
-
                                 <div class="total_sum w25">
                                     <ul class="over_hidden sum_box">
                                         <li class="fw_bold bill_color t_right"><span id="total_price">24,000</span>원</li>
@@ -299,7 +296,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <!-- <p style="font-size: 12px; color: red; text-align: right; margin-top: 10px;">※도서산간 지역일 경우에는 배송비가 추가됩니다.</p> -->
+                            <p style="font-size: 12px; color: red; text-align: right; margin-top: 10px;">※도서산간 지역일 경우에는 배송비가 추가됩니다.</p>
 
                         </div>
 
@@ -334,7 +331,7 @@
                                 /**
                                 * @brief 카드 input 자동커서이동 추가
                                 */
-                                $(".c_input").keyup (function () {
+                                $(".c_input").keyup(function () {
                                     var inputCursor = $(this).attr("maxlength");
                                     if (this.value.length >= inputCursor) {
                                         $(this).next('.c_input').focus();
@@ -345,7 +342,7 @@
                                 /**
                                 * @brief 유효기간 input 자동커서이동 추가
                                 */
-                                $(".period_input").keyup (function () {
+                                $(".period_input").keyup(function () {
                                     var inputCursor = $(this).attr("maxlength");
                                     if (this.value.length >= inputCursor) {
                                         $(this).next('.period_input').focus();
@@ -533,6 +530,128 @@
             </form>
         </section>
         <!--} order_contents-->
+
+        <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script>
+            /**
+            * @brief   kakao api
+            */
+            // 우편번호 찾기 화면을 넣을 element
+            var element_layer = document.getElementById('layer');
+
+            function closePostcode() {
+                // iframe을 넣은 element를 안보이게 한다.
+                element_layer.style.display = 'none';
+                $(".modal_background").hide();
+            }
+
+            function addressPostcode() {
+                new daum.Postcode({
+                    oncomplete: function(data) {
+                        // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                        // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                        // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                        var addr = ''; // 주소 변수
+                        var extraAddr = ''; // 참고항목 변수
+
+                        //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                        if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                            addr = data.roadAddress;
+                        } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                            addr = data.jibunAddress;
+                        }
+
+                        // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                        if(data.userSelectedType === 'R'){
+                            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                                extraAddr += data.bname;
+                            }
+                            // 건물명이 있고, 공동주택일 경우 추가한다.
+                            if(data.buildingName !== '' && data.apartment === 'Y'){
+                                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                            }
+                            // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                            if(extraAddr !== ''){
+                                extraAddr = ' (' + extraAddr + ')';
+                            }
+                        } 
+                        
+                        // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                        document.getElementById('mb_zip').value = data.zonecode;
+                        document.getElementById("mb_addr_1").value = addr;
+                        // 커서를 상세주소 필드로 이동한다.
+                        document.getElementById("mb_addr_2").focus();
+
+
+                        //추가 배송비 발생지역인지 확인
+                        var chkZipCount = COMMON.ajax.deliveryAddPrice(data.zonecode);
+
+                        if(chkZipCount > 0)
+                        {
+                            DELIVERY_ADD_CHK = true;
+                            var beforeDeliveryPrice = parseInt(COMMON.form.str_num($("#total_delivery_price").text()));
+                            var total_price = parseInt(COMMON.form.str_num($("#total_price").text()));
+                            total_price += DELIVERY_ADD_PRICE;
+
+                            $("#total_delivery_price").text(COMMON.form.comma(beforeDeliveryPrice + DELIVERY_ADD_PRICE));
+                            $("#total_price").text(COMMON.form.comma(total_price));
+                        }                
+
+                        // iframe을 넣은 element를 안보이게 한다.
+                        // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                        element_layer.style.display = 'none';
+                        $(".modal_background").hide();
+                        
+                        
+                    },
+                    width : '100%',
+                    height : '100%',
+                    maxSuggestItems : 5
+                }).embed(element_layer);
+
+                // iframe을 넣은 element를 보이게 한다.
+                element_layer.style.display = 'block';
+
+                // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+                initLayerPosition();
+            }
+
+            function initLayerPosition(){
+
+                $(".modal_background").show();
+                $("#layer").css('z-index','100');
+                var borderWidth = 1; //샘플에서 사용하는 border의 두께
+
+                // 위에서 선언한 값들을 실제 element에 넣는다.
+                var whole_width = $( document ).width();
+                var whole_height = $( document ).height();
+
+                var width = parseInt(whole_width) * 0.5;
+                //var height = parseInt(whole_height) * 0.5;
+                var height = '400';
+
+                element_layer.style.width = width + 'px';
+                element_layer.style.height = height + 'px';
+                element_layer.style.border = borderWidth + 'px solid';
+                // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+                var left =(((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
+                var top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
+                element_layer.style.left = left + 'px';
+                element_layer.style.top = '20%';
+
+                if(IS_MOBILE == true)
+                {
+                    $("#layer").css("width","90%").css("left","5%").css('height','380px');
+                }
+                else
+                {
+                    $("#layer").css("width","40%").css("left","30%");
+                }
+            }
+        </script>
         
         <!--footer {-->
         <footer class="katana_bg_color">

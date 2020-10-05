@@ -50,6 +50,15 @@
     function orderList() {
         window.location = "../order/order_list.html";
     }
+    function orderResult() {
+        window.location = "../order/order_result.html";
+    }
+
+    $(document).ready( function(){
+        $('.mb_outing').click( function(){
+            alert('탈퇴하시겠습니까?');
+        });
+    });
 </script>
 <body>
     <!--wrap {-->
@@ -106,7 +115,7 @@
                    <!-- <a class="web_txt" href="#">로그아웃</a> -->
                    <a class="web_txt" href="#">회원가입</a>
                    <a href="#"><img id="M_cart_icon" src="../images/M_cart_icon.png" alt="Mobile cart icon"></a>
-                   <a class="web_txt" href="#">장바구니</a>
+                   <a class="web_txt" href="../member/mb_cart.html">장바구니</a>
                    <a href="#"><img id= "M_menu_icon" src="../images/M_menu_icon.png" alt="Mobile menu icon"></a>
                 </div>
             </div>
@@ -202,7 +211,25 @@
 
                         <tbody>
                             <tr>
-                                <td class="t_center">2020041411423806</td>
+                                <td class="t_center cursor_p" onclick="orderResult()">2020041411423806</td>
+                                <td class="t_center">2020-04-14</td>
+                                <td class="t_center">1</td>
+                                <td class="t_center">79,900</td>
+                                <td class="t_center display_none">무통장</td>
+                                <td class="t_center display_none">취소</td>
+                            </tr>
+
+                            <tr>
+                                <td class="t_center cursor_p" onclick="orderResult()">2020041411423806</td>
+                                <td class="t_center">2020-04-14</td>
+                                <td class="t_center">1</td>
+                                <td class="t_center">79,900</td>
+                                <td class="t_center display_none">무통장</td>
+                                <td class="t_center display_none">취소</td>
+                            </tr>
+
+                            <tr>
+                                <td class="t_center cursor_p" onclick="orderResult()">2020041411423806</td>
                                 <td class="t_center">2020-04-14</td>
                                 <td class="t_center">1</td>
                                 <td class="t_center">79,900</td>

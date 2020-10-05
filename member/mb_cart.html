@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../js/jquery.easing.1.3.js"></script>
     <script src="../js/jquery.transit.min.js"></script>
+    <script src="../js/COMMON_geo.js"></script>
     <!--goolge webfont-->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!--font Awesome-->
@@ -70,7 +71,7 @@
         <header class="bor_bottom">
             <div class="header_wrap dw_1400px">
                 <div class="header_left"><a href="../index.html"><img src="../images/katana_logo.png" alt="main logo image"></a></div>
-                
+
                 <nav class="header_middle">
                     <a href="javascript:;"><img class="M_close_btn" src="../images/M_close_btn.png" alt="Mobile close btn"></a>
                     <ul class="over_hidden">
@@ -81,27 +82,27 @@
                         <li>
                             <a href="../product/product_list.html">드라이버</a>
                         </li>
-    
+
                         <li>
                             <a href="#">페이웨이우드</a>
                         </li>
-    
+
                         <li>
                             <a href="#">유틸리티/웨지</a>
                         </li>
-    
+
                         <li>
                             <a href="#">아이언</a>
                         </li>
-    
+
                         <li>
                             <a href="#">피터</a>
                         </li>
-    
+
                         <li>
                             <a href="#">볼</a>
                         </li>
-                        
+
                         <li>
                             <a href="#">벡</a>
                         </li>
@@ -143,92 +144,106 @@
                     <h2>장바구니</h2>
                 </div>
             </div>
-            
-            <div class="member_middle dw_1400px">
-                <table class="cart_table">
-                    <thead>
-                        <tr>
-                            <th class="t_center table_check"><input type="checkbox">상품명</th>
-                            <th class="t_center">총 수량</th>
-                            <th class="t_center">판매가</th>
-                            <th class="t_center display_none">배송비</th>
-                            <th class="t_center">소계</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td class="product_td">
-                                <div class="w20 table_check over_hidden"><input type="checkbox"></div>
-                                <div class="w30"><a href="../product/product_view"><img src="../images/pr_img1.png" alt="product image"></a></div>
-                                <div class="w30 text_hidden">SWORD Hi-Fi 9L SWORD Hi-Fi 9L SWORD Hi-Fi SWORD Hi-Fi 9LSWOR</div>
-                            </td>
-                            <td class=""><span>2</span></td>
-                            <td class="display_none"><span>2,5000</span>원</td>
-                            <td class="">무료</td>
-                            <td class=""><span>50,000</span>원</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="mypage_btn mt10px dw_1400px">
-                <div class="mb_delete">선택삭제</div>
-                <div class="add_delevery">
-                    <ul>
-                        <li>배송비</li>
-                        <li><span>2,500</span>원</li>
-                    </ul>
-    
-                    <ul>
-                        <li>총계</li>
-                        <li><span>5,000,000</span>원</li>
-                    </ul>
+            <!--768px 이하일때만 선택삭제교체-->
+            <div class="dw_1400px mobile_delete_btn">
+                <div class="btn_box t_right mt10px">
+                    <input type="button" class="delete_btn f12 white_color" value="선택삭제">
                 </div>
             </div>
 
-            <div class="cart_btn dw_1400px">
-                <ul class="t_center">
-                    <li class="cart_order">주문하기</li>
-                    <li class="cart_back">쇼핑계속하기</li>
-                </ul>
-            </div>
+            <input type="hidden" name="cart_chk" value="true">
+            <!--member_wrap {-->
+            <div class="member_wrap dw_1400px mt30px">
+                <div class="member_middle mb1per">
+                    <div class="member_list">
+                        <div class="w40 mbl_subject t_center">
+                            <div class="w10"><input type="checkbox" id="pd_all_input" name="pr_price"></div>
+                            <div class="w90 t_center">상품명</div>
+                        </div>
 
+                        <div class="w10 mbl_subject t_center">총수량</div>
+                        <div class="w20 mbl_subject t_center">판매가</div>
+                        <div class="w10 mbl_subject t_center display_none">배송비</div>
+                        <div class="w20 mbl_subject t_center">소계</div>
+                    </div>
+
+                    <div class="mbl_middle mt20px">
+                        <div class="w40 mbl_box t_center fw_bold">
+                            <ul class="cart_left w40">
+                                <li class="w25">
+                                    <input type="checkbox" name="chk[]" class="each_chk" id="chk_1" onClick="calcu('1')">
+                                </li>
+                                <li class="w50"><a href="#"><img src="../images/pr_img1.png" alt="product image"></a></li>
+                            </ul>
+
+                            <ul class="cart_right w60">
+                                <li class="f14"><span>SWORD FAIRWAY WOOD SWORD FAIRWAY WOOD</span></li>
+                            </ul>
+                        </div>
+                        <div class="w10 mbl_box t_center" id="pd_qty_1">2</div>
+                        <div class="w20 mbl_box t_center" id="pd_price_1">50,000원</div>
+                        <div class="w10 mbl_box t_center display_none">무료</div>
+                        <div class="w20 mbl_box t_center">100,000원</div>
+                    </div>
+
+                    <div class="mbl_middle mt20px">
+                        <div class="w40 mbl_box t_center fw_bold">
+                            <ul class="cart_left w40">
+                                <li class="w25">
+                                    <input type="checkbox" name="chk[]" class="each_chk" id="chk_2" onClick="calcu('2')">
+                                </li>
+                                <li class="w50"><a href="#"><img src="../images/pr_img1.png" alt="product image"></a></li>
+                            </ul>
+
+                            <ul class="cart_right w60">
+                                <li class="f14"><span>SWORD FAIRWAY STEEL</span></li>
+                            </ul>
+                        </div>
+                        <div class="w10 mbl_box t_center" id="pd_qty_2">1</div>
+                        <div class="w20 mbl_box t_center" id="pd_price_2">20,000원</div>
+                        <div class="w10 mbl_box t_center display_none" id="d_price">3,000원</div>
+                        <div class="w20 mbl_box t_center">23,000원</div>
+                    </div>
+
+                </div>
+
+                <style>
+                    .wrap .member_contents .member_wrap .mbcart_bottom .mb_right_info ul li strong div { float: left; width: 80%; }
+                </style>
+
+                <div class="mbcart_bottom mb10px">
+                    <div class="mb_btn mb_left_btn t_left display_none">
+                        <div class="btn_box">
+                            <input type="button" class="delete_btn" tb="cart" value="선택삭제">
+                        </div>
+                    </div>
+
+                    <div class="mb_right_info over_hidden">
+                        <ul class="over_hidden">
+                            <li class="">
+                                <span>배송비</span>
+                                <strong class="total_delivery_price"><div id="total_shipping">0</div>원</strong>
+                            </li>
+
+                            <li class="">
+                                <span>총계</span>
+                                <strong class=""><div id="cart_sum_price">0</div>원</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb_bottom">
+                    <div class="t_center">
+                        <input type="button" class="fw_bold cart_order mr10px" value="주문하기">
+                        <input type="button" class="fw_bold cart_before" value="쇼핑계속하기">
+                    </div>
+                </div>
+            </div>
+            <!--} member_wrap-->
         </section>
         <!--} member_contents-->
-        <style>
-            /*mb_cart*/
-            .wrap .member_contents .member_middle .cart_table  { border-collapse: collapse; border-spacing: 0; width: 100%; margin-top: 30px; margin-bottom: 10px; }
-            .wrap .member_contents .member_middle .cart_table th { padding: 10px 20px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
-            .wrap .member_contents .member_middle .cart_table td  { padding: 10px 20px; border-bottom: 1px solid #ddd; vertical-align: middle; text-align: center; }
-            .wrap .member_contents .member_middle .cart_table .table_check input { float: left; }
-            .wrap .member_contents .member_middle .cart_table .product_td div img { width: 100px; }
-            .wrap .member_contents .member_middle .cart_table tr .product_td div { float: left; }
-            .wrap .member_contents .member_middle .cart_table tr .product_td::after { content: ''; display: block; overflow: hidden; clear: both; }
 
-            .wrap .member_contents .mypage_btn .mb_delete { float: left; padding: 10px 20px; background-color: #ff5050; color: white; }
-            .wrap .member_contents .mypage_btn .add_delevery { float: right; border: 1px solid #ddd; padding: 10px 20px; }
-            .wrap .member_contents .mypage_btn::after { content: ''; display: block; overflow: hidden; clear: both; }
-            .wrap .member_contents .mypage_btn .add_delevery ul { float: left; }
-            .wrap .member_contents .mypage_btn .add_delevery ul:first-child { margin-right: 20px; border-right: 1px solid #ddd; padding-right: 20px; }
-            .wrap .member_contents .mypage_btn .add_delevery ul li { float: left; }
-            .wrap .member_contents .mypage_btn .add_delevery ul li:first-child { margin-right: 65px; }
-            .wrap .member_contents .mypage_btn .add_delevery ul::after { content: ''; display: block; overflow: hidden; clear: both; }
-            .wrap .member_contents .mypage_btn .add_delevery::after { content: ''; display: block; overflow: hidden; clear: both; }
-            
-            .wrap .member_contents .cart_btn { max-width: 260px; margin: 60px auto; }
-            .wrap .member_contents .cart_btn ul li { float: left;  color: white; padding: 10px 20px; }
-            .wrap .member_contents .cart_btn ul li:first-child { margin-right: 20px;}
-            .wrap .member_contents .cart_btn ul::after { content: ''; display: block; overflow: hidden; clear: both; }
-            .wrap .member_contents .cart_btn .cart_order { background-color: #323232; }
-            .wrap .member_contents .cart_btn .cart_back { background-color: #abaaaa; }
-            
-            @media(max-width:768px){
-                
-            }
-
-        </style>
-        
         <!--footer {-->
         <footer class="katana_bg_color">
             <!--ft_top {-->
@@ -241,14 +256,14 @@
                                 <span class="fw_bold">고객센터</span>
                             </a>
                         </li>
-                        
+
                         <li class="col-xs-4">
                             <a href="#">
                                 <img class="mr10px" src="../images/way_icon.png" alt="way_icon">
                                 <span class="fw_bold">오시는 길</span>
                             </a>
                         </li>
-                        
+
                         <li class="col-xs-4">
                             <a href="#">
                                 <img class="mr10px" src="../images/as_icon.png" alt="as_icon">
@@ -259,7 +274,7 @@
                 </div>
             </div>
             <!--} ft_top-->
-            
+
             <!--ft_middle {-->
             <div class="ft_middle dw_1400px">
                 <ul class="ftm_top mb10px">
@@ -270,7 +285,7 @@
                 </ul>
 
                 <p>본 사이트의 상품이미지 저작권은 카타나골프에 있으며, 내용의 무단복제를 금합니다.</p>
-                
+
                 <p class="ftm_middle"><strong>KATANA GOLF Co.,LTD</strong> &nbsp;&nbsp;All Rights Reserved.</p>
 
                 <ul class="ftm_bottom">
@@ -288,3 +303,99 @@
     <!--} wrap-->
 </body>
 </html>
+
+<script>
+
+    function calcu(rowindex){
+
+        var pd_qty = $('#pd_qty_'+ rowindex).html(); //수량
+        var pd_price = $('#pd_price_'+ rowindex).html(); //상품가격
+
+        var pd_qty_number= pd_qty.replace(/[^0-9]/g,'');
+        var pd_price_number= pd_price.replace(/[^0-9]/g,'');
+
+        var cart_price = parseInt( pd_qty_number ) * parseInt( pd_price_number );
+        var checkyn = $('#chk_'+ rowindex).prop('checked');
+        // var all_chk = $('#pd_all_input' + rowindex).prop('checked');
+
+        var deliver_p = $('#d_price').text(); //배송비 3000원
+
+        if( checkyn == true ){  //각각의 체크박스가 체크 됐을 때
+            console.log(deliver_p); 
+
+            var cart_sum_price = $('#cart_sum_price').html(); //총계
+            var cal_price = parseInt(cart_sum_price) + parseInt(cart_price);
+            $('#cart_sum_price').html(cal_price);
+
+        }else if( checkyn == false ){
+
+            var cart_sum_price = $('#cart_sum_price').html();
+            var cal_price = parseInt(cart_sum_price) - parseInt(cart_price);
+            $('#cart_sum_price').html(cal_price);
+
+        }
+
+        var cart_sum_price = $('#cart_sum_price').html(); //배송비 추가
+
+        if(cart_sum_price > 30000 || cart_sum_price == 0){ //3만원 이상이거나 배송비가 0일때
+            $('#total_shipping').html('0');  //배송비 가격 0원
+
+        }else{
+            $('#total_shipping').html('3000');  //배송비 가격 3000원
+            var cal_price = parseInt($('#total_shipping') + pd_price);
+            // $('#cart_sum_price') = cart_price + pd_price;
+        }
+    }
+
+    $(document).ready( function(){
+        
+        $('#pd_all_input').click( function(){
+            $("input:checkbox[name='chk[]']").prop("checked",true); //각각 체크박스 check
+
+            if($('#pd_all_input').prop('checked')){    //all check 일때
+                // console.log(cart_sum_price);
+                var cart_sum_price = $('#cart_sum_price').html();
+                var cal_price = parseInt(cart_sum_price) + parseInt(cart_price);
+                $('#cart_sum_price').html(cal_price);
+
+            }else{
+                $("input:checkbox[name='chk[]']").prop("checked",false);
+
+            }
+        });
+    });
+</script>
+            <script>
+            $(document).ready( function(){
+
+                //each check
+                // $("input:checkbox[name='chk[]']").each(function(i){
+                //     $(this).click(function(){
+                //         // chkBox[i] = $(this).is(":checked");
+                //         var pd_price = parseInt($(this).attr("pd_price"));
+                //         var amount = parseInt($(this).attr("amount"));
+                //         pd_price = pd_price * amount;
+
+                //         var each_pd_seq = $(this).attr("pd_seq");
+
+                //         var each_amount = $(this).attr("amount");
+
+                //         if(chkBox[i] == true)
+                //         {
+                //             pd_seq.push(each_pd_seq);
+                //             chk_amount.push(each_amount);
+                //             total_price += pd_price;
+                //             $("#cart_sum_price").text(COMMON.form.comma(total_price) + "원");
+                //         }
+                //         else
+                //         {
+                //             pd_seq.splice(i);
+                //             chk_amount.splice(i);
+                //             total_price -= pd_price;
+                //             $("#cart_sum_price").text(COMMON.form.comma(total_price) + "원");
+                //         }
+                //     });
+                // });
+            });
+        </script>
+
