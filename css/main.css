@@ -2,7 +2,8 @@
 body{ font-family: 'IBM Plex Sans', sans-serif; }
 a { color: initial; text-decoration: none; }
 a:hover,a:active,a:visited ,a:link { color: #333; text-decoration: none; }
-
+/*order.html modal(배송지)*/
+.modal_background { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.3); z-index: 10; }
 .wrap .menu_bg { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.486); z-index: 10; }
 #M_member_icon, #M_menu_icon, #M_cart_icon { display: none; }
 .wrap header .header_wrap { padding: 20px 0; }
@@ -296,6 +297,7 @@ a:hover,a:active,a:visited ,a:link { color: #333; text-decoration: none; }
 .wrap .result_contents .result_middle .rm_middle .rmm_middle .rm_box .rmb_right ul li p { float: left; width: 20%; text-align: left; }
 .wrap .result_contents .result_middle .rm_middle .rmm_middle .rm_box .rmb_right ul li span { float: right; }
 .wrap .result_contents .result_middle .rm_middle .rmm_middle .rm_box .rmb_right ul li::after { content: ''; display: block; overflow: hidden; clear: both; }
+.wrap .result_contents .result_btn input[type="button"] { border: none; padding: 10px 20px; background-color: #323232; color: white; margin-bottom: 10vh;  }
 
 /*my_page*/
 .wrap .member_contents .mb_middle { margin-top: 3%; }
@@ -347,3 +349,4 @@ a:hover,a:active,a:visited ,a:link { color: #333; text-decoration: none; }
 .wrap .member_contents .member_wrap .mb_bottom div .cart_order { background-color: #323232; }
 .wrap .member_contents .member_wrap .mb_bottom div .cart_before { background-color: #e6e6e6; color: #333; }
 .wrap .member_contents .mobile_delete_btn { display: none; }
+.wrap .member_contents .member_wrap .mbcart_bottom .mb_right_info ul li strong div { float: left; width: 80%; }

@@ -9,6 +9,7 @@
     <script src="../js/jquery.easing.1.3.js"></script>
     <script src="../js/jquery.transit.min.js"></script>
     <script src="../js/COMMON_geo.js"></script>
+    <script src="../js/common.js"></script>
     <!--goolge webfont-->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!--font Awesome-->
@@ -18,48 +19,12 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
-
 <script>
-    $(document).ready( function(){
-        /**
-        * @brief menu click event
-        */
-        $('#w_search_icon,.Msb_top_close').click( function(){
-            $('#M_search_box').slideToggle();
-        });
-
-        /**
-        * @brief menu click event
-        */
-        $('#M_menu_icon').click( function(){
-            $('.header_middle').css('right','0');
-            $('.menu_bg').toggle();
-        });
-
-        $('.menu_bg,.M_close_btn').click( function(){
-            $('.header_middle').css('right','-100%');
-            $('.menu_bg').toggle();
-        });
-
-        /**
-        * @brief menu click event
-        */
-        $('#charge_cash_radio').click( function(){
-            $('.card_info').hide();
-            $('.cash_info').show();
-            pay_type = "무통장";
-        });
-
-        $('#charge_card_radio').click( function(){
-            $('.card_info').show();
-            $('.cash_info').hide();
-            pay_type = "카드";
-        });
-    });
-</script>
-<script>
-    function orderResult() {
-        window.location = "../order/order_result.html";
+    function proView() {
+        window.location = "../product/product_view.html";
+    }
+    function proList() {
+        window.location = "../product/product_list.html";
     }
 </script>
 <body>
@@ -173,11 +138,11 @@
                                 <li class="w25">
                                     <input type="checkbox" name="chk[]" class="each_chk" id="chk_1" onClick="calcu('1')">
                                 </li>
-                                <li class="w50"><a href="#"><img src="../images/pr_img1.png" alt="product image"></a></li>
+                                <li class="w50"><a href="../product/product_view.html"><img src="../images/pr_img1.png" alt="product image"></a></li>
                             </ul>
 
                             <ul class="cart_right w60">
-                                <li class="f14"><span>SWORD FAIRWAY WOOD SWORD FAIRWAY WOOD</span></li>
+                                <li class="f14"><span class="cursor_p" onclick="proView()">SWORD FAIRWAY WOOD SWORD FAIRWAY WOOD</span></li>
                             </ul>
                         </div>
                         <div class="w10 mbl_box t_center" id="pd_qty_1">2</div>
@@ -192,24 +157,20 @@
                                 <li class="w25">
                                     <input type="checkbox" name="chk[]" class="each_chk" id="chk_2" onClick="calcu('2')">
                                 </li>
-                                <li class="w50"><a href="#"><img src="../images/pr_img1.png" alt="product image"></a></li>
+                                <li class="w50"><a href="../product/product_view.html"><img src="../images/pr_img1.png" alt="product image"></a></li>
                             </ul>
 
                             <ul class="cart_right w60">
-                                <li class="f14"><span>SWORD FAIRWAY STEEL</span></li>
+                                <li class="f14"><span class="cursor_p" onclick="proView()">SWORD FAIRWAY STEEL</span></li>
                             </ul>
                         </div>
                         <div class="w10 mbl_box t_center" id="pd_qty_2">1</div>
                         <div class="w20 mbl_box t_center" id="pd_price_2">20,000원</div>
-                        <div class="w10 mbl_box t_center display_none" id="d_price">3,000원</div>
+                        <div class="w10 mbl_box t_center display_none"><span id="d_price">3,000</span>원</div>
                         <div class="w20 mbl_box t_center">23,000원</div>
                     </div>
 
                 </div>
-
-                <style>
-                    .wrap .member_contents .member_wrap .mbcart_bottom .mb_right_info ul li strong div { float: left; width: 80%; }
-                </style>
 
                 <div class="mbcart_bottom mb10px">
                     <div class="mb_btn mb_left_btn t_left display_none">
@@ -236,7 +197,7 @@
                 <div class="mb_bottom">
                     <div class="t_center">
                         <input type="button" class="fw_bold cart_order mr10px" value="주문하기">
-                        <input type="button" class="fw_bold cart_before" value="쇼핑계속하기">
+                        <input type="button" onclick="proList()" class="fw_bold cart_before" value="쇼핑계속하기">
                     </div>
                 </div>
             </div>
@@ -305,24 +266,18 @@
 </html>
 
 <script>
-
     function calcu(rowindex){
 
         var pd_qty = $('#pd_qty_'+ rowindex).html(); //수량
         var pd_price = $('#pd_price_'+ rowindex).html(); //상품가격
 
-        var pd_qty_number= pd_qty.replace(/[^0-9]/g,'');
-        var pd_price_number= pd_price.replace(/[^0-9]/g,'');
+        var pd_qty_number = pd_qty.replace(/[^0-9]/g,'');    //수량 숫자
+        var pd_price_number = pd_price.replace(/[^0-9]/g,''); //상품가격 숫자
 
-        var cart_price = parseInt( pd_qty_number ) * parseInt( pd_price_number );
-        var checkyn = $('#chk_'+ rowindex).prop('checked');
-        // var all_chk = $('#pd_all_input' + rowindex).prop('checked');
-
-        var deliver_p = $('#d_price').text(); //배송비 3000원
+        var cart_price = parseInt( pd_qty_number ) * parseInt( pd_price_number ); //수량 X 상품가격 
+        var checkyn = $('#chk_'+ rowindex).prop('checked'); //각각인풋 
 
         if( checkyn == true ){  //각각의 체크박스가 체크 됐을 때
-            console.log(deliver_p); 
-
             var cart_sum_price = $('#cart_sum_price').html(); //총계
             var cal_price = parseInt(cart_sum_price) + parseInt(cart_price);
             $('#cart_sum_price').html(cal_price);
@@ -349,14 +304,20 @@
 
     $(document).ready( function(){
         
+        var deliver_p = $('#d_price').html(); //배송비 3000원
         $('#pd_all_input').click( function(){
             $("input:checkbox[name='chk[]']").prop("checked",true); //각각 체크박스 check
 
             if($('#pd_all_input').prop('checked')){    //all check 일때
-                // console.log(cart_sum_price);
-                var cart_sum_price = $('#cart_sum_price').html();
-                var cal_price = parseInt(cart_sum_price) + parseInt(cart_price);
-                $('#cart_sum_price').html(cal_price);
+
+                $("input:checkbox[name='chk[]']").each(function(i){
+                    chk_amount[i] = parseInt($(this).attr("amount"));
+                    
+                    pd_price[i] = parseInt($(this).attr("pd_price"));
+                    pd_seller[i] = $(this).attr("pd_seller");
+
+                    total_price += (pd_price[i] * chk_amount[i]);
+                });
 
             }else{
                 $("input:checkbox[name='chk[]']").prop("checked",false);
@@ -365,37 +326,3 @@
         });
     });
 </script>
-            <script>
-            $(document).ready( function(){
-
-                //each check
-                // $("input:checkbox[name='chk[]']").each(function(i){
-                //     $(this).click(function(){
-                //         // chkBox[i] = $(this).is(":checked");
-                //         var pd_price = parseInt($(this).attr("pd_price"));
-                //         var amount = parseInt($(this).attr("amount"));
-                //         pd_price = pd_price * amount;
-
-                //         var each_pd_seq = $(this).attr("pd_seq");
-
-                //         var each_amount = $(this).attr("amount");
-
-                //         if(chkBox[i] == true)
-                //         {
-                //             pd_seq.push(each_pd_seq);
-                //             chk_amount.push(each_amount);
-                //             total_price += pd_price;
-                //             $("#cart_sum_price").text(COMMON.form.comma(total_price) + "원");
-                //         }
-                //         else
-                //         {
-                //             pd_seq.splice(i);
-                //             chk_amount.splice(i);
-                //             total_price -= pd_price;
-                //             $("#cart_sum_price").text(COMMON.form.comma(total_price) + "원");
-                //         }
-                //     });
-                // });
-            });
-        </script>
-

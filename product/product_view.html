@@ -8,6 +8,8 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../js/jquery.easing.1.3.js"></script>
     <script src="../js/jquery.transit.min.js"></script>
+    <script src="../js/COMMON_geo.js"></script>
+    <script src="../js/common.js"></script>
     <!--goolge webfont-->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!--font Awesome-->
@@ -17,25 +19,47 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
-
 <script>
+     function order() {
+        window.location = "../order/order.html";
+    }
+
+    function mbCart() {
+        window.location = "../member/mb_cart.html";
+    }
+
     $(document).ready( function(){
-        //검색아이콘 눌렀을때 
-        $('#w_search_icon').click( function(){
-            $('#M_search_box').slideToggle();
-        });
-        $('.Msb_top_close').click( function(){
-            $('#M_search_box').slideToggle();
+        /**
+        * @brief product view thumnail evnet
+        */
+        var MainImg = $('.prv_main_img a img').attr('src');
+
+        $('.prv_img ul li a img').mouseover( function(){
+            // console.log($(this).attr('src'));
+            $('.prv_main_img a img').attr('src',$(this).attr('src'));
+            
+        }).mouseout( function(){
+            // console.log(img);
+            $('.prv_main_img a img').attr('src',MainImg);
         });
 
-        //모바일일때 메뉴아이콘 클릭시
-        $('#M_menu_icon').click( function(){
-            $('.header_middle').css('right','0');
-            $('.menu_bg').toggle();
-        });
-        $('.menu_bg,.M_close_btn').click( function(){
-            $('.header_middle').css('right','-100%');
-            $('.menu_bg').toggle();
+        /**
+        * @brief product view tab
+        */
+        $('.tablinks').each( function(){
+            $(this).click( function(){
+                
+                $(".tablinks").removeClass("border_active");
+                $(this).addClass("border_active");
+
+                $(".tabcontent").removeClass("tab_active");
+                $(".tabcontent").css("display", "none");
+
+                var chk = $(this).attr("tab_name");
+                $('#' + chk).css("display", "block");
+
+            });
+            
         });
     });
 </script>
@@ -119,37 +143,6 @@
             <!--product_view {-->
             <section class="product_view">
                 <div class="prv_wrap dw_1400px over_hidden">
-                    <script>
-                        $(document).ready( function(){
-                            var MainImg = $('.prv_main_img a img').attr('src');
-
-                            $('.prv_img ul li a img').mouseover( function(){
-                                // console.log($(this).attr('src'));
-                                $('.prv_main_img a img').attr('src',$(this).attr('src'));
-                                
-                            }).mouseout( function(){
-                                // console.log(img);
-                                $('.prv_main_img a img').attr('src',MainImg);
-                            });
-
-                            $('.tablinks').each( function(){
-                                $(this).click( function(){
-                                    
-                                    $(".tablinks").removeClass("border_active");
-                                    $(this).addClass("border_active");
-
-                                    $(".tabcontent").removeClass("tab_active");
-                                    $(".tabcontent").css("display", "none");
-
-                                    var chk = $(this).attr("tab_name");
-                                    $('#' + chk).css("display", "block");
-
-                                });
-                                
-                            });
-                        });
-                    </script>
-
                     <div class="prv_img">
                         <ul>
                             <li><a href="#"><img src="../images/pro_img2.jpg" alt="small product image"></a></li>
@@ -203,16 +196,6 @@
                                     <li>무료배송</li>
                                 </ul>
                             </div>
-
-                            <script>
-                                function order() {
-                                    window.location = "../order/order.html";
-                                }
-
-                                function mbCart() {
-                                    window.location = "../member/mb_cart.html";
-                                }
-                            </script>
 
                             <div class="proTxt_bottom">
                                 <ul>
