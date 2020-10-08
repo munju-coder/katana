@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATANA GOLF</title>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/jquery.transit.min.js"></script>
+    <script src="../js/COMMON_geo.js"></script>
+    <script src="../js/common.js"></script>
+    <!--goolge webfont-->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--css-->
+    <link rel="stylesheet" href="../css/import.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<script>
+    $(document).ready( function(){
+        //info_write toggle event
+        $('.inquery_txt,.modal_inquery_background,.inquery_close').click( function(){
+            // console.log('a');
+            $(".modal_inquery_background").toggle();
+            $(".modal_inquery_box").toggle();
+            
+        });
+    });
+</script>
+<body>
+    <!--wrap {-->
+    <div class="wrap">
+        <!--menu click bg call-->
+        <div class="menu_bg"></div>
+        <!--header {-->
+        <header class="bor_bottom">
+            <div class="header_wrap dw_1400px">
+                <div class="header_left"><a href="../index.html"><img src="../images/katana_logo.png" alt="main logo image"></a></div>
+                
+                <nav class="header_middle">
+                    <a href="javascript:;"><img class="M_close_btn" src="../images/M_close_btn.png" alt="Mobile close btn"></a>
+                    <ul class="over_hidden">
+                        <li class="M_login_btn">
+                            <a href="#">로그인/회원가입</a>
+                        </li>
+
+                        <li>
+                            <a href="../product/product_list.html">드라이버</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">페이웨이우드</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">유틸리티/웨지</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">아이언</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">피터</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">볼</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">벡</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header_right over_hidden">
+                   <a href="#"><img id="w_search_icon" src="../images/M_search_icon.png" alt="search icon"></a>
+                   <a href="#"><img id="M_member_icon" src="../images/M_member_icon.png" alt="Mobile member icon"></a>
+                   <a class="web_txt" href="../login/login.html">로그인</a>
+                   <!--로그인 후에는  회원가입 삭제 -> #M_member_icon 넣어주세요 -->
+                   <!-- <a class="web_txt" href="#">로그아웃</a> -->
+                   <a class="web_txt" href="#">회원가입</a>
+                   <a href="#"><img id="M_cart_icon" src="../images/M_cart_icon.png" alt="Mobile cart icon"></a>
+                   <a class="web_txt" href="#">장바구니</a>
+                   <a href="#"><img id= "M_menu_icon" src="../images/M_menu_icon.png" alt="Mobile menu icon"></a>
+                </div>
+            </div>
+
+            <div id="M_search_box">
+                <div>
+                    <a class="Msb_top_close" href="#"><img src="../images/close_btn.png" alt="close_btn"></a>
+                </div>
+
+                <form action="" class="Msb_middle">
+                    <div class="search_box t_center over_hidden">
+                        <input type="text" placeholder="상품검색">
+                        <button><img src="../images/search_icon.png" alt="search_icon"></button>
+                    </div>
+                </form>
+            </div>
+        </header>
+        <!--} header-->
+
+        <div class="board_list">
+            <!--modal_inquery {-->
+            <div class="modal_inquery_background"></div>
+            <div class="modal_inquery_box">
+                <a href="javascript:;" class="inquery_close"><i class="far fa-times-circle t_right"></i></a>
+                <div class="inquery_top fw_600 t_center mb40px">
+                    <h2 class="f24 mb30px">문의하기</h2>
+                    <p class="mb10px word_break">궁금한 점을 문의해 주세요.</p>
+                    <p class="mb10px word_break">담당자가 메일을 통해 친절하게 답변해드립니다.</p>
+                </div>
+
+                <!--iq_write_form {-->
+                <form class = "iq_write_form">
+                    <input type="hidden" name="mb_id" value = "">
+                    <fieldset>
+                        <div class="iq_write t_center mb20px">
+                            <p class="p_color mb10px">성명</p>
+                            <div class="m10px">
+                                <input type="text" name = "app_no" class="outline_none" placeholder="성명">
+                            </div>
+                        </div>
+                        
+                        <div class="iq_write t_center mb20px iq_write_number">
+                            <p class="mb10px">연락처</p>
+                            <div class="">
+                                <select name="" id="" class="w20">
+                                    <option value="">010</option>
+                                    <option value="">011</option>
+                                    <option value="">016</option>
+                                    <option value="">017</option>
+                                    <option value="">018</option>
+                                    <option value="">019</option>
+                                </select>
+            
+                                <span class="">-</span>
+                                <span class="">
+                                    <input type="text" name="mb_tel_1" id="mb_tel_1" class="w20" value="" maxlength="4">
+                                </span>
+                                <span class="">-</span>
+                                <span class="">
+                                    <input type="text" name="mb_tel_2" id="mb_tel_2" class="w20" value="" maxlength="4">
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="iq_write t_center mb20px iq_write_email">
+                            <p class="om_title">이메일</p>
+                            <div class="">
+                                <span class="">
+                                    <input type="text" name="mb_email" id="mb_email" class="w30" value="" maxlength="100">
+                                </span>
+                                <span class="">@</span>
+
+                                <input type="text" name="mb_email02" id="mb_email02"  class="w30" value="naver.com">
+                            </div>
+                        </div>
+                        
+                        <div class="iq_write t_center mb20px iq_write_textarea">
+                            <p class="p_color mb10px">제목</p>
+                            <div class="m10px">
+                                <input type="text" name = "app_dt" class="outline_none w90" placeholder="ex)문의드립니다">
+                            </div>
+                        </div>
+
+                        <div class="iq_write t_center mb30px iq_write_textara">
+                            <p class="p_color mb10px">문의내용</p>
+                            <div class="m10px">
+                                <textarea name="" class="w90" id="" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="iq_write_btn t_center">
+                            <div>
+                                <button class="outline_none" href="#">등록</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <!--} iq_write_form-->
+            </div>
+            <!--} modal_inquery-->
+
+            <!--info_list {-->
+            <div class="info_list dw_1400px mb5per">
+                <div class="if_top t_center">공지사항</div>
+
+                <div class="t_right mb10px inquery_txt">
+                    <a href="javascript:;">문의사항</a>
+                </div>
+
+                <div class="if_middle">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="t_center">번호</th>
+                                <th class="t_center">제목</th>
+                                <th class="display_none t_center">날짜</th>
+                                <th class="t_center">작성자</th>
+                            </tr>
+            
+                            <tr class="">
+                                <td class="t_center txt_c seq">4</td>
+                                <td class="t_left text_hidden"><a href="../board/info_view.html"><img src="../images/info_list.gif" alt="info_badge"> 2020년 8월 베스트 포토 리뷰왕 당첨자 발표 <img src="../images/info_new.gif" alt="info_new"></a></td>
+                                <td class="t_center txt_l display_none">0000-00-00</td>
+                                <td class="t_center txt_c">김**</td>
+                            </tr>
+            
+                            <tr class="">
+                                <td class="t_center txt_c seq">3</td>
+                                <td class="t_left text_hidden"><a href="../board/info_view.html"><img src="../images/info_list.gif"> 공지사항 테스트입니다.</a></td>
+                                <td class="t_center txt_l display_none">2020-01-15</td>
+                                <td class="t_center txt_c">김**</td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="t_center txt_c seq">2</td>
+                                <td class="t_left text_hidden"><a href="../board/info_view.html"><img src="../images/info_list.gif"> 공지사항 테스트입니다.</a></td>
+                                <td class="t_center txt_l display_none">2020-01-15</td>
+                                <td class="t_center txt_c">김**</td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="t_center txt_c seq">1</td>
+                                <td class="t_left text_hidden"><a href="../board/info_view.html"><img src="../images/info_list.gif"> 공지사항 테스트입니다.</a></td>
+                                <td class="t_center txt_l display_none">2020-01-15</td>
+                                <td class="t_center txt_c">김**</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--} info_list-->
+
+            <!--p_paging {-->
+            <div class="p_paging t_center">
+                <div class="pp_wrap">
+                    <a href=""><i class="fas fa-angle-left"></i></a>
+                    <a href=""><i class="fas fa-angle-double-left"></i></a>
+                    <a class="now" href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">5</a>
+                    <a href="">6</a>
+                    <a href="">7</a>
+                    <a href="">8</a>
+                    <a href="">9</a>
+                    <a class="tw_num" href="">10</a>
+                    <a href=""><i class="fas fa-angle-right"></i></a>
+                    <a href=""><i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+            <!--} p_paging-->
+        </div>
+        
+        <!--footer {-->
+        <footer class="katana_bg_color">
+            <!--ft_top {-->
+            <div class="ft_top">
+                <div class="dw_1400px over_hidden ft_top_wrap">
+                    <ul class="over_hidden t_center">
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../images/customer_icon.png" alt="customer_icon">
+                                <span class="fw_bold">고객센터</span>
+                            </a>
+                        </li>
+                        
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../images/way_icon.png" alt="way_icon">
+                                <span class="fw_bold">오시는 길</span>
+                            </a>
+                        </li>
+                        
+                        <li class="col-xs-4">
+                            <a href="#">
+                                <img class="mr10px" src="../images/as_icon.png" alt="as_icon">
+                                <span class="fw_bold">A/S 센터</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--} ft_top-->
+            
+            <!--ft_middle {-->
+            <div class="ft_middle dw_1400px">
+                <ul class="ftm_top mb10px">
+                    <li><strong class="fw_bold">(주)카타나골프</strong>서울특별시 중구 소공로35 롯데캐슬 아이리스 3층 315호</li>
+                    <li>대표: 김홍득 Tel: 02-501-6955-8255</li>
+                    <li>Fax: 02-538-0116</li>
+                    <li>A/S센터: 02-737-4444</li>
+                </ul>
+
+                <p>본 사이트의 상품이미지 저작권은 카타나골프에 있으며, 내용의 무단복제를 금합니다.</p>
+                
+                <p class="ftm_middle"><strong>KATANA GOLF Co.,LTD</strong> &nbsp;&nbsp;All Rights Reserved.</p>
+
+                <ul class="ftm_bottom">
+                    <li><a href="#">통합회원</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보 처리방침</a></li>
+                    <li><a href="#">사업자 정보 확인</a></li>
+                    <li><a href="#">공지사항 FAQ</a></li>
+                </ul>
+            </div>
+            <!--} ft_middle-->
+        </footer>
+        <!--} footer-->
+    </div>
+    <!--} wrap-->
+</body>
+</html>

@@ -36,8 +36,6 @@
     @media(max-width:768px){
         #layer { width: 100% !important; }
     }
-
-
 </style>
 
 <body>
@@ -206,11 +204,16 @@
                                 <div class="mb_subject mb10px">주소</div>
 
                                 <div class="mb_input address_input mb10px">
-                                    <input type="text" name="r_zip" id="mb_zip" class=""placeholder="우편번호 입력하세요.">
+                                    <input type="text" name="r_zip" id="mb_zip" class="" placeholder="우편번호 입력하세요.">
                                     
-                                    <div class="zip_btn cursor fw_600 f14" id="r_zip_btn">
+                                    <!-- <div class="zip_btn cursor fw_600 f14" id="r_zip_btn">
                                         <button id="mb_zip_fd" onclick="addressPostcode()">주소찾기</button>
                                         <button id="delivery_change_btn">배송지 변경</button>
+                                    </div> -->
+
+                                    <div class="zip_btn cursor_p fw_bold f14" id="r_zip_btn">
+                                        <div id="mb_zip_fd" onclick="addressPostcode()">주소찾기</div>
+                                        <div id="delivery_change_btn">배송지 변경</div>
                                     </div>
                                 </div>
                                 
